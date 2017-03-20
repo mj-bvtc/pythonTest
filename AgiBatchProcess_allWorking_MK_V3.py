@@ -213,7 +213,7 @@ def processChunk(_CurrentChunk):
     if isMeshed(_CurrentChunk) == False:
         _CurrentChunk.buildModel(surface=PhotoScan.Arbitrary, interpolation=PhotoScan.EnabledInterpolation, face_count = 2000000)
         doc.save()
-    if isTextured(_CurrentChunk) == False:
+    if isTextured(_CurrentChunk) is False or None:
         _CurrentChunk.buildUV(mapping=PhotoScan.GenericMapping)
         _CurrentChunk.buildTexture(blending=PhotoScan.MosaicBlending, size=4096)
         doc.save()
@@ -267,9 +267,6 @@ def exportObj(_CurrentChunk):
         #_CurrentChunk.exportModel(fullFilePath, binary=False, precision=6, texture_format="jpg", texture=True, normals=True, colors=True, cameras=False, udim=False, strip_extensions=True)
 
         print("\n")
-
-
-##this is a comment
 
 
 
@@ -473,12 +470,25 @@ def partiallyProcessAll():
 
 def isTextured(_CurrentChunk):
 
+    #if not hasattr(_CurrentChunk.model, 'meta'):
+       # print("This chunk does not have a texture:  " + _CurrentChunk.label)
+        #return False
+    try:
+        print(_CurrentChunk.model.meta['atlas/atlas_blend_mode'])
+        print("This chunk already has a texture:  " + _CurrentChunk.label)
+        return True
+
+    except AttributeError:
+        print("This chunk does not have a texture:  " + _CurrentChunk.label)
+        return False
+    '''
     if _CurrentChunk.model.meta['atlas/atlas_blend_mode']:
         print("This chunk already has a texture:  " + _CurrentChunk.label)
         return True
     else:
         print("This chunk does not have a texture:  " + _CurrentChunk.label)
         return False
+    '''
 
 def isMarkered(_CurrentChunk):
     if len(_CurrentChunk.markers) > 0:
