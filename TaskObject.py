@@ -1,4 +1,7 @@
 import uuid
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 
 class Node:
     """Basic connection point"""
@@ -8,7 +11,6 @@ class Node:
         self.id = uuid.uuid4()
         self.is_node = None
         self.is_hub = None
-
 
     def add_connections(self, *connections):
         for connection in connections:
@@ -28,6 +30,8 @@ class Node:
         else:
             self.is_hub = False
         return
+    
+    
 class Line:
     """Connects two nodes"""
     def __init__(self, a, b):
