@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 class Node:
     """Basic connection point"""
     def __init__(self, name):
