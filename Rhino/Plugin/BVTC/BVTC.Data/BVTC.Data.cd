@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Comment CommentText="BVTC.Data">
+    <Position X="0.75" Y="0.562" Height="0.312" Width="1.7" />
+  </Comment>
+  <Class Name="BVTC.Data.data">
+    <Position X="0.5" Y="1.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAIAAAAAAAAAAAAAAAAAAAAgICgAAAABAAAAAAA=</HashCode>
+      <FileName>data.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.Data.Drafting">
+    <Position X="5.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ARBhAAAEhAsABEIABBYEAlBAAPAAAEAgRBIFgQAAIAA=</HashCode>
+      <FileName>Drafting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.Data.Helpers.DateTimeExtensions">
+    <Position X="8.25" Y="3" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\DateTimeExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.Data.Helpers.StringExtensions">
+    <Position X="8.25" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAEAAAAAAAAAQIAAAAAAABAAAAggAAAA=</HashCode>
+      <FileName>Helpers\StringExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.Data.Project">
+    <Position X="3.5" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAgAAAAAAAACAAAAAAAEAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Project.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.Data.Revision">
+    <Position X="3.5" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAgAgAAAAAAAAQEAAAAAEABBAAAAAAAAAA=</HashCode>
+      <FileName>Revision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.Data.Stock">
+    <Position X="0.5" Y="4.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.Data.Exceptions.DataMisMatch_Exception">
+    <Position X="11.25" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\DataMisMatch_Exception.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.Data.DataTools">
+    <Position X="0.5" Y="5.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataTools.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.Data.Geometry">
+    <Position X="3.5" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAABAACAAAAAgAAIAAAAAAAA=</HashCode>
+      <FileName>Geometry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.Data.Exceptions.BlockID_Exception">
+    <Position X="11.25" Y="3.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\BlockID_Exception.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.Data.Exceptions.DataMissing_Exception">
+    <Position X="11.25" Y="2" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\DataMissing_Exception.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.Data.Helpers.DataExtensions">
+    <Position X="8.25" Y="6.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\DataExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.Data.Helpers.ListExtensions">
+    <Position X="8.25" Y="4.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAhAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Helpers\ListExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

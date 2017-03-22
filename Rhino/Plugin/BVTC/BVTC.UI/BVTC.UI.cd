@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="FlowLayoutPanel to build drafting Block UI.">
+    <Position X="0.67" Y="0.858" Height="0.466" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Forms used in RhinoPlugin">
+    <Position X="3.358" Y="1" Height="0.347" Width="6.417" />
+  </Comment>
+  <Comment CommentText="Class to hold comboBox lists items">
+    <Position X="10.489" Y="0.918" Height="0.466" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Extension Methods">
+    <Position X="13.018" Y="1.011" Height="0.3" Width="1.7" />
+  </Comment>
+  <Class Name="BVTC.UI.Helpers.DataGridView_Extensions">
+    <Position X="12.75" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\DataGridView_Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.UI.ShowDT">
+    <Position X="5" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAACAAAAAAAACAAAACAAgAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>ShowDT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.UI.PanelUI">
+    <Position X="0.5" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>mgAAAACEASQAAAEACICEAAAAAhDEACQAgACACSDCgAA=</HashCode>
+      <FileName>TitleBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.UI.TitleBlock">
+    <Position X="3" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAEAABCAEABSDAAAAAAAgAIAgAAAAAA=</HashCode>
+      <FileName>TitleBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.UI.ComboLists">
+    <Position X="10.25" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AQIBAAACAAEBBAAAAAQGAAAAgAAEAAAAAAAAAAAABIA=</HashCode>
+      <FileName>ComboLists.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.UI.ProjectInfo">
+    <Position X="7.25" Y="1.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAACAAABAACACAAAACAAAIBEAAAAgAAAAAAAA=</HashCode>
+      <FileName>ProjectInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.UI.Helpers.Control_Extensions">
+    <Position X="12.75" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Helpers\Control_Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

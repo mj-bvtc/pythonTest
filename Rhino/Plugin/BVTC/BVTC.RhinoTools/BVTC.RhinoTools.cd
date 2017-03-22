@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="BVTC.RhinoTools.Data.RhinoText">
+    <Position X="0.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAEAAoAAAAIAAAAABAAAAgYgAAAIAiCIMBFoBQAgAgA=</HashCode>
+      <FileName>Data\RhinoText.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.RhinoTools.Document">
+    <Position X="6.5" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAFAAAAAAAAQAAACAgACAAAAAAAgBQAAIAEAAA=</HashCode>
+      <FileName>Document.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.RhinoTools.FileStructure">
+    <Position X="3.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAIAAACAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FileStructure.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.RhinoTools.Geometry">
+    <Position X="12.75" Y="3.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAEEAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Geometry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.RhinoTools.Layout">
+    <Position X="3.5" Y="2.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAMAABAAAAAAAAAACAAAAAAAEAAEAAEAAEQ=</HashCode>
+      <FileName>Layout.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.RhinoTools.Exceptions.Layout_Exception">
+    <Position X="12.75" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\Layout_Exception.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.RhinoTools.Exceptions.MissingGUID_Exception">
+    <Position X="12.75" Y="2" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\MissingGUID_Exception.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.RhinoTools.Helpers.Array_Extensions">
+    <Position X="10" Y="3.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\Array_Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.RhinoTools.Helpers.BoundingBox_Extensions">
+    <Position X="10" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\BoundingBox_Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.RhinoTools.Helpers.DataTable_Extensions">
+    <Position X="10" Y="2.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Helpers\DataTable_Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.RhinoTools.Helpers.Double_Extensions">
+    <Position X="10" Y="5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Helpers\Double_Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.RhinoTools.Helpers.String_Extensions">
+    <Position X="10" Y="6.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\String_Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BVTC.RhinoTools.Helpers.Document_Extensions">
+    <Position X="10" Y="7.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Helpers\Document_Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
