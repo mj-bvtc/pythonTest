@@ -1,7 +1,14 @@
+"""
+Tools for automating BVTC process with Agisoft PhotoScan
+Compatible with Version 1.2.6
+"""
+
 import PhotoScan
 import os
 import math
 import itertools
+import time
+import datetime
 
 doc = PhotoScan.app.document
 app = PhotoScan.app
@@ -32,28 +39,49 @@ class AgiChunk:
         self.is_enough_points = None
         self.initial_point_count = None
         self.final_point_count = None
+        self.log_path = None
+        self.log = None
+        self.log_list = []
+
+    def create_log(self):
+        # writes log file in folder with each chunk
+        full_path = self.format_file_at_chunk(".txt", add_timestamp=True)
+        report = open(full_path, "w")
+        report.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n\n")
+        for log in self.log_list:
+            report.write(log)
+        report.close()
+        self.log_path = full_path
+        self.log = report
+        print("Created log file: {}\n".format(full_path))
+        return
 
     def align(self):
+        start = time.time()
         chunk = self.chunk
         # initial alignment
         chunk.matchPhotos(accuracy=PhotoScan.HighAccuracy, preselection=PhotoScan.GenericPreselection,
                           keypoint_limit=40000, tiepoint_limit=4000)
         chunk.alignCameras()
         self.initial_point_count = len(chunk.point_cloud.points)
-        print(f"Original Point initialPointCount: {self.initial_point_count}")
-        self.is_aligned = True
+        print("Original Point count: {}".format(self.initial_point_count))
+        end = time.time()
+        duration = end - start
+        log_string = "Alignment duration: {}\n".format(duration)
+        self.log_list.append(log_string)
         return
 
     def adjust_error(self):
+        start = time.time()
         # Reduces error without removing too many points, while loop
         chunk = self.chunk
         pt_list = chunk.point_cloud.points
         init_points = self.initial_point_count
-        print(f"initial points: {str(init_points)}")
+        print("initial points: {}".format(str(init_points)))
 
         # initial settings before loop\
 
-        error1 = error(chunk)
+        error1 = self.check_error()
 
         initial_pts = init_points
         current_pts = initial_pts
@@ -93,9 +121,15 @@ class AgiChunk:
         print("Number of points after gradual selection: ")
         print(len(chunk.point_cloud.points))
         self.final_point_count = len(chunk.point_cloud.points)
+        self.is_aligned = True
+        end = time.time()
+        duration = end - start
+        log_string = "Error adjustment duration: {}\n".format(duration)
+        self.log_list.append(log_string)
         return
 
     def camera_crop(self):
+        start = time.time()
         chunk = self.chunk
         point_list = []
         combos = list(itertools.combinations(chunk.cameras, 2))
@@ -164,8 +198,14 @@ class AgiChunk:
         message += " Halfway between them is " + str(
             center) + " A selection of nearby points will be made, and those points will be cropped. Thanks, and have a greeeeat day"
         print(message)
+        end = time.time()
+        duration = end - start
+        log_string = "Camera crop duration: {}\n".format(duration)
+        self.log_list.append(log_string)
+        return
 
-    def export_obj(self):
+    def format_file_at_chunk(self, ext, add_timestamp=False):
+        timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
         chunk = self.chunk
         # gets folder containing chunk pics/source folder instead of building it
         path_pic = chunk.cameras[0].photo.path
@@ -175,11 +215,21 @@ class AgiChunk:
         # naming the file
         folder = folder_pic
         label = chunk.label
-        new_path = "C:\\Users\\peters\\Desktop\\"
         name = str(label).replace(" ", "_")
-        full_path = ""
-        full_path = folder + name + ".obj"
+        if add_timestamp is True:
+            full_path = folder + name + "_" + timestamp + ext
+        else:
+            full_path = folder + name + ext
+        return full_path
 
+    def export_obj(self):
+        start = time.time()
+        chunk = self.chunk
+        full_path = self.format_file_at_chunk(".obj")
+
+        if os.path.exists(full_path):
+            print("{} already exists, skipping".format(full_path))
+            return
         if os.path.exists(folder):
 
             message1 = "Attempting to export:".rjust(150)
@@ -195,8 +245,14 @@ class AgiChunk:
             message = "Failed to export: " + full_path
             print(message)
             print("\n")
+        end = time.time()
+        duration = end - start
+        log_string = ".obj export duration: {}\n".format(duration)
+        self.log_list.append(log_string)
 
     def process_chunk(self):
+        start_g = time.time()
+        chunk = self.chunk
         # check that chunk exists and is enabled
         self.check_exists()
         self.check_enabled()
@@ -204,57 +260,81 @@ class AgiChunk:
             return
 
         # run alignment and lower the error
-        self.align()
-        self.camera_crop()
-        self.adjust_error()
-        self.camera_crop()
-        self.check_enough_points()
-        if self.is_enough_points is False or None:
-            return
-        doc.save()
+        self.check_alignment()
+        if self.is_aligned is not True:
+            self.align()
+            self.camera_crop()
+            self.adjust_error()
+            self.camera_crop()
+            self.check_enough_points()
+            if self.is_enough_points is False or None:
+                return
+            doc.save()
 
         # process chunk
         # build dense point cloud
+        start = time.time()
         self.check_dense()
         if self.is_dense is False or None:
             chunk.buildDenseCloud(quality=PhotoScan.HighQuality)
             doc.save()
+        end = time.time()
+        duration = end - start
+        log_string = "Dense point cloud build Duration: {}\n".format(duration)
+        self.log_list.append(log_string)
 
         # build mesh
+        start = time.time()
         self.check_mesh()
-        if self.is_meshed() is False or None:
+        if self.is_meshed is False or None:
             chunk.buildModel(surface=PhotoScan.Arbitrary,
                              interpolation=PhotoScan.EnabledInterpolation,
                              face_count=2000000)
             doc.save()
+        end = time.time()
+        duration = end - start
+        log_string = "Mesh build Duration: {}\n".format(duration)
+        self.log_list.append(log_string)
 
         # build texture
+        start = time.time()
         self.check_texture()
-        if self.is_textured() is False or None:
+        if self.is_textured is False or None:
             chunk.buildUV(mapping=PhotoScan.GenericMapping)
             chunk.buildTexture(blending=PhotoScan.MosaicBlending, size=4096)
             doc.save()
-        
+        end = time.time()
+        duration = end - start
+        log_string = "Texture build Duration: {}\n".format(duration)
+        self.log_list.append(log_string)
+
         # export obj
         self.export_obj()
         if self.is_obj is not False or None:
-            print(f"Script ran successfully for {self.name}")
+            print("Script ran successfully for {}\n\n\n".format(self.name))
+        end_g = time.time()
+        duration = end_g - start_g
+        log_string = "Processing for chunk {} duration: {}\n".format(self.name, duration)
+        self.log_list.append(log_string)
+
+        # create log here
+        self.create_log()
         return    
 
     def check_exists(self):
-        if self.chunk is none:
+        if self.chunk is None:
             print("Error: chunk is none")
             self.exists = False
             return
         else:
             self.name = self.chunk.label
-            print(f"Chunk {self.name} exists")
+            print("Chunk {} exists".format(self.name))
             self.exists = True
             return
 
     def check_enabled(self):
         if self.chunk.enabled is False:
-            print("Error: chunk is not enabled, skipping")
+            print("Error: chunk is not enabled, skipping\n\n\n")
             self.enabled = False
             return
         else:
@@ -264,11 +344,11 @@ class AgiChunk:
 
     def check_alignment(self):
         if self.chunk.point_cloud is not None:
-            print(f"This chunk already has a sparse cloud: {self.name} ")
+            print("This chunk already has a sparse cloud: {} ".format(self.name))
             self.is_aligned = True
             return
         else:
-            print(f"This chunk does not have a sparse cloud: {self.name} ")
+            print("This chunk does not have a sparse cloud: {} ".format(self.name))
             self.is_aligned = False
             return
 
@@ -348,7 +428,7 @@ class AgiChunk:
         self.error = ave_error
         if self.start_error is None:
             self.start_error = ave_error
-        return
+        return ave_error
 
     def check_dense(self):
         if self.chunk.dense_cloud:
@@ -419,20 +499,13 @@ class AgiChunk:
         name = chunk.label
         if points_in_chunk < min_points:
             print("Less than required number of points to generate good model")
-            print(f"{min_points} required points, {points_in_chunk} points in chunk {self.name}  ")
+            print("{} required points, {} points in chunk {}".format(min_points, points_in_chunk, self.name))
             self.is_enough_points = False
         else:
             self.is_enough_points = True
         return
     
     def check_obj(self):
-        pass
-
-
-class Report:
-    """Data logging tools for chunks"""
-
-    def __init__(self):
         pass
 
 
@@ -446,48 +519,54 @@ class AgiDoc:
         self.doc = doc
         self.path = None
         self.is_saved = None
-        self.is_saved()
+        self.check_save()
         self.chunks = doc.chunks
 
     def get_path(self):
         path = app.getSaveFileName("Save Project As") + ".psx"
         doc.save(path)
         print("Saved to path:  " + path)
-        self.path = path
+        self.path = doc.path
+        self.is_saved = True
         return
 
-    def is_saved(self):
+    def check_save(self):
         if doc.path == "":
             print("File not saved")
             self.get_path()
             self.is_saved = False
+            self.get_path()
             return
         else:
-            print(f"File already Saved: {doc.path}")
+            print("File already Saved: {}".format(doc.path))
             self.path = doc.path
             self.is_saved = True
             return
 
     def process_all_chunks(self):
+        print("\n\n\n")
         for chunk in self.chunks:
             agi = AgiChunk(chunk, self)
             agi.process_chunk()
         PhotoScan.app.messageBox("Script Complete! Hooray!!!")
 
 
-def pt_dist( pta, ptb):
-    x = ptb[0] - pta[0]
-    y = ptb[1] - pta[1]
-    z = ptb[2] - pta[2]
-    distance = math.sqrt((x) ** 2 + (y) ** 2 + (z) ** 2)
+def pt_dist(pt_a, pt_b):
+    x = pt_b[0] - pt_a[0]
+    y = pt_b[1] - pt_a[1]
+    z = pt_b[2] - pt_a[2]
+    distance = math.sqrt(x**2 + y**2 + z**2)
     return distance
 
 
-def mid_pt(ptA, ptB):
-    x = (ptA[0] + ptB[0]) / 2
-    y = (ptA[1] + ptB[1]) / 2
-    z = (ptA[2] + ptB[2]) / 2
+def mid_pt(pt_a, pt_b):
+    x = (pt_a[0] + pt_b[0]) / 2
+    y = (pt_a[1] + pt_b[1]) / 2
+    z = (pt_a[2] + pt_b[2]) / 2
     return [x, y, z]
 
 if __name__ == "__main__":
-    pass
+    test = AgiDoc()
+    if test.is_saved is False or None:
+        test.get_path()
+    test.process_all_chunks()
