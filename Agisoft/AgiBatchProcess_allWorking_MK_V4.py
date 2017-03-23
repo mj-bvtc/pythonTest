@@ -42,6 +42,7 @@ class AgiChunk:
         self.log_path = None
         self.log = None
         self.log_list = []
+        self.indent = "\t"*5
 
     def create_log(self):
         # writes log file in folder with each chunk
@@ -67,7 +68,7 @@ class AgiChunk:
         print("Original Point count: {}".format(self.initial_point_count))
         end = time.time()
         duration = end - start
-        log_string = "Alignment duration: {}\n".format(duration)
+        log_string = "Alignment duration: {}{}\n".format(self.indent, duration)
         self.log_list.append(log_string)
         return
 
@@ -124,7 +125,7 @@ class AgiChunk:
         self.is_aligned = True
         end = time.time()
         duration = end - start
-        log_string = "Error adjustment duration: {}\n".format(duration)
+        log_string = "Error adjustment duration: {}{}\n".format(self.indent, duration)
         self.log_list.append(log_string)
         return
 
@@ -200,7 +201,7 @@ class AgiChunk:
         print(message)
         end = time.time()
         duration = end - start
-        log_string = "Camera crop duration: {}\n".format(duration)
+        log_string = "Camera crop duration: {}{}\n".format(self.indent, duration)
         self.log_list.append(log_string)
         return
 
