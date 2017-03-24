@@ -9,23 +9,14 @@ import math
 import itertools
 import time
 import datetime
+from functools import wraps
 
 doc = PhotoScan.app.document
 app = PhotoScan.app
 
 
-class TimerDecorator(object):
-    def __init__(self, original_function):
-        self.original_function = original_function
 
-    def __call__(self, *args, **kwargs):
-        start = time.time()
-        result = self.original_function(*args, **kwargs)
-        dur = time.time() - start
-        message = '{} ran in: {} sec'.format(self.original_function.__name__, round(dur, 2))
-        print(message)
-        self.log_list.append(message)
-        return result
+
 
 
 class AgiChunk:
@@ -58,6 +49,26 @@ class AgiChunk:
         self.log_list = []
         self.indent = "\t"*5
 
+    @wraps
+    def timer(self, fn):
+        log = self.log_list
+
+        @wraps(fn)
+        def wrapper(*args, **kwargs):
+            start = time.time()
+            print("Starting to wrap")
+            result = fn(*args, **kwargs)
+            end = time.time()
+            dur = end - start
+            print("Ending wrap")
+            log_string = "Duration for function '{}' is {} seconds ".format(fn.__name__, round(dur, 2))
+            print("LOG LIST HERRREEEEREREREREE: " + log_string)
+            log.append(log_string)
+            print(list(log))
+            return result
+
+        return wrapper
+
     def create_log(self):
         # writes log file in folder with each chunk
         full_path = self.format_file_at_chunk(".txt", add_timestamp=True)
@@ -71,7 +82,7 @@ class AgiChunk:
         print("Created log file: {}\n".format(full_path))
         return
 
-    @TimerDecorator
+    @timer
     def align(self):
         chunk = self.chunk
         # initial alignment
@@ -80,10 +91,9 @@ class AgiChunk:
         chunk.alignCameras()
         self.initial_point_count = len(chunk.point_cloud.points)
         print("Original Point count: {}".format(self.initial_point_count))
-        self.log_list.append(log_string)
         return
 
-    @TimerDecorator
+    @timer
     def adjust_error(self):
         # Reduces error without removing too many points, while loop
         chunk = self.chunk
@@ -136,7 +146,7 @@ class AgiChunk:
         self.is_aligned = True
         return
 
-    @TimerDecorator
+    @timer
     def camera_crop(self):
         chunk = self.chunk
         point_list = []
@@ -226,7 +236,6 @@ class AgiChunk:
             full_path = folder + name + ext
         return full_path
 
-    @TimerDecorator
     def export_obj(self):
         chunk = self.chunk
 
@@ -251,7 +260,7 @@ class AgiChunk:
 
         return
 
-    @TimerDecorator
+    @timer
     def run_verification(self):
         chunk = self.chunk
         # check that chunk exists and is enabled
@@ -260,8 +269,9 @@ class AgiChunk:
         if not (self.exists and self.enabled):
             return
 
-    @TimerDecorator
+    @timer
     def run_alignment(self):
+        chunk = self.chunk
         # run alignment and lower the error
         self.check_alignment()
         if self.is_aligned is not True:
@@ -274,18 +284,20 @@ class AgiChunk:
                 return
             doc.save()
 
-    @TimerDecorator
+    @timer
     def run_dense(self):
         # process chunk
         # build dense point cloud
+        chunk = self.chunk
 
         self.check_dense()
         if self.is_dense is False or None:
             chunk.buildDenseCloud(quality=PhotoScan.HighQuality)
             doc.save()
 
-    @TimerDecorator
+    @timer
     def run_mesh(self):
+        chunk = self.chunk
         # build mesh
         self.check_mesh()
         if self.is_meshed is False or None:
@@ -294,8 +306,9 @@ class AgiChunk:
                              face_count=2000000)
             doc.save()
 
-    @TimerDecorator
+    @timer
     def run_texture(self):
+        chunk = self.chunk
         # build texture
         self.check_texture()
         if self.is_textured is False or None:
@@ -303,15 +316,17 @@ class AgiChunk:
             chunk.buildTexture(blending=PhotoScan.MosaicBlending, size=4096)
             doc.save()
 
-    @TimerDecorator
+    @timer
     def run_obj(self):
+        chunk = self.chunk
         # export obj
         self.export_obj()
         if self.is_obj is not False or None:
             print("Script ran successfully for {}\n\n\n".format(self.name))
 
-    @TimerDecorator
+    @timer
     def run_process(self):
+        chunk = self.chunk
         # process chunk
         self.run_verification()
         self.run_alignment()
@@ -324,6 +339,7 @@ class AgiChunk:
         return    
 
     def check_exists(self):
+        chunk = self.chunk
         if self.chunk is None:
             print("Error: chunk is none")
             self.exists = False
@@ -556,7 +572,7 @@ class AgiDoc:
         print("\n\n\n")
         for chunk in self.chunks:
             agi = AgiChunk(chunk, self)
-            agi.process_chunk()
+            agi.run_process()
         PhotoScan.app.messageBox("Script Complete! Hooray!!!")
 
 
@@ -587,6 +603,7 @@ def main():
     test = AgiDoc()
     test.check_save()
     test.process_all_chunks()
+
 
 if __name__ == "__main__":
     main()
