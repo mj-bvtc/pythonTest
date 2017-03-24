@@ -1,0 +1,15 @@
+2017-03-24 08:09:31
+
+Report for path: 
+
+
+***
+
+Global counts: 
+Counter()
+
+
+Summary:
+Number of Directories: 0
+Number of missing Rhino files: 0
+Number of missing OBJ files: 0

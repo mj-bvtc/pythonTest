@@ -2,6 +2,8 @@ import os
 import collections
 import HiddenFiles
 import datetime
+import tkinter as tk
+from tkinter.filedialog import askdirectory
 
 
 def rhino_report(target):
@@ -21,6 +23,7 @@ def rhino_report(target):
     report.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n\n")
     dir_count = 0
     found_rhino = 0
+    found_obj = 0
     count_global = collections.Counter()  # built-in counting object, used globally
     print(f"Report for path: {target}\n", file=report)
 
@@ -46,6 +49,8 @@ def rhino_report(target):
                 name, ext = os.path.splitext(file)
                 if ext.upper() == ".3DM":
                     found_rhino += 1
+                if ext.upper() == ".OBJ":
+                    found_obj += 1
                 count[ext] += 1         # increment local count
                 count_global[ext] += 1  # increment global count
                 # print(file)            # if interested, uncomment this to see files
@@ -53,18 +58,28 @@ def rhino_report(target):
 
         print("\n", file=report)                     # create a visual space between directories
 
-    # print global counts
+    # print summary to report, .txt
     print("\n***\n", file=report)
     print("Global counts: ", file=report)
     print(count_global, file=report)
     missing_rhino = dir_count - found_rhino
+    missing_obj = dir_count - found_obj
     print(f"\n\nSummary:\nNumber of Directories: {dir_count}\n"
-          f"Number of missing Rhino files: {missing_rhino}", file=report)
+          f"Number of missing Rhino files: {missing_rhino}"
+          f"\nNumber of missing OBJ files: {missing_obj}", file=report)
+
+    # print the following to console
+    print(f"Searching this directory {target}")
+    print(f"\n\nSummary:\nNumber of Directories: {dir_count}\n"
+          f"Number of missing Rhino files: {missing_rhino}"
+          f"\nNumber of missing OBJ files: {missing_obj}")
     report.close()
 
 
 def main():
-    target = r"V:\Projects\Miscericordia University\_Field Work Folder Template (Do Not Delete)\Agi-Renders"
+    dial = tk.Tk()
+    dial.withdraw()
+    target = askdirectory()
     rhino_report(target)
 
 if __name__ == "__main__":
