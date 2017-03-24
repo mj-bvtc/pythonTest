@@ -520,7 +520,6 @@ class AgiDoc:
         self.doc = doc
         self.path = None
         self.is_saved = None
-        self.check_save()
         self.chunks = doc.chunks
 
     def get_path(self):
@@ -532,10 +531,9 @@ class AgiDoc:
         return
 
     def check_save(self):
-        if doc.path == "":
-            print("File not saved")
-            self.get_path()
+        if doc.path is "" or None or False:
             self.is_saved = False
+            print("File not saved")
             self.get_path()
             return
         else:
@@ -566,8 +564,11 @@ def mid_pt(pt_a, pt_b):
     z = (pt_a[2] + pt_b[2]) / 2
     return [x, y, z]
 
-if __name__ == "__main__":
+
+def main():
     test = AgiDoc()
-    if test.is_saved is False or None:
-        test.get_path()
+    test.check_save()
     test.process_all_chunks()
+
+if __name__ == "__main__":
+    main()
