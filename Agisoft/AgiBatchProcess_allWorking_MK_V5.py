@@ -14,6 +14,20 @@ doc = PhotoScan.app.document
 app = PhotoScan.app
 
 
+class TimerDecorator(object):
+    def __init__(self, original_function):
+        self.original_function = original_function
+
+    def __call__(self, *args, **kwargs):
+        start = time.time()
+        result = self.original_function(*args, **kwargs)
+        dur = time.time() - start
+        message = '{} ran in: {} sec'.format(self.original_function.__name__, round(dur, 2))
+        print(message)
+        self.log_list.append(message)
+        return result
+
+
 class AgiChunk:
     """
     A collection of attributes and
@@ -57,8 +71,8 @@ class AgiChunk:
         print("Created log file: {}\n".format(full_path))
         return
 
+    @TimerDecorator
     def align(self):
-        start = time.time()
         chunk = self.chunk
         # initial alignment
         chunk.matchPhotos(accuracy=PhotoScan.HighAccuracy, preselection=PhotoScan.GenericPreselection,
@@ -66,14 +80,11 @@ class AgiChunk:
         chunk.alignCameras()
         self.initial_point_count = len(chunk.point_cloud.points)
         print("Original Point count: {}".format(self.initial_point_count))
-        end = time.time()
-        duration = end - start
-        log_string = "Alignment duration: {}{}\n".format(self.indent, duration)
         self.log_list.append(log_string)
         return
 
+    @TimerDecorator
     def adjust_error(self):
-        start = time.time()
         # Reduces error without removing too many points, while loop
         chunk = self.chunk
         pt_list = chunk.point_cloud.points
@@ -123,14 +134,10 @@ class AgiChunk:
         print(len(chunk.point_cloud.points))
         self.final_point_count = len(chunk.point_cloud.points)
         self.is_aligned = True
-        end = time.time()
-        duration = end - start
-        log_string = "Error adjustment duration: {}{}\n".format(self.indent, duration)
-        self.log_list.append(log_string)
         return
 
+    @TimerDecorator
     def camera_crop(self):
-        start = time.time()
         chunk = self.chunk
         point_list = []
         combos = list(itertools.combinations(chunk.cameras, 2))
@@ -199,10 +206,6 @@ class AgiChunk:
         message += " Halfway between them is " + str(
             center) + " A selection of nearby points will be made, and those points will be cropped. Thanks, and have a greeeeat day"
         print(message)
-        end = time.time()
-        duration = end - start
-        log_string = "Camera crop duration: {}{}\n".format(self.indent, duration)
-        self.log_list.append(log_string)
         return
 
     def format_file_at_chunk(self, ext, add_timestamp=False):
@@ -223,36 +226,33 @@ class AgiChunk:
             full_path = folder + name + ext
         return full_path
 
+    @TimerDecorator
     def export_obj(self):
-        start = time.time()
         chunk = self.chunk
-        full_path = self.format_file_at_chunk(".obj")
 
-        if os.path.exists(full_path):
-            print("{} already exists, skipping".format(full_path))
+        if self.is_obj is False:
             return
-        if os.path.exists(folder):
-
+        if self.obj_path is None:
+            return
+        try:
             message1 = "Attempting to export:".rjust(150)
-            message2 = full_path.rjust(150)
+            message2 = self.obj_path.rjust(150)
             message = message1 + "\n" + message2
             print(message)
             chunk.exportModel(full_path) 
             print("\n")
             self.obj_path = full_path
             self.is_obj = True
-        else:
-            self.is_obj = False
+
+        except AttributeError:
             message = "Failed to export: " + full_path
             print(message)
             print("\n")
-        end = time.time()
-        duration = end - start
-        log_string = ".obj export duration: {}\n".format(duration)
-        self.log_list.append(log_string)
 
-    def process_chunk(self):
-        start_g = time.time()
+        return
+
+    @TimerDecorator
+    def run_verification(self):
         chunk = self.chunk
         # check that chunk exists and is enabled
         self.check_exists()
@@ -260,6 +260,8 @@ class AgiChunk:
         if not (self.exists and self.enabled):
             return
 
+    @TimerDecorator
+    def run_alignment(self):
         # run alignment and lower the error
         self.check_alignment()
         if self.is_aligned is not True:
@@ -272,51 +274,50 @@ class AgiChunk:
                 return
             doc.save()
 
+    @TimerDecorator
+    def run_dense(self):
         # process chunk
         # build dense point cloud
-        start = time.time()
+
         self.check_dense()
         if self.is_dense is False or None:
             chunk.buildDenseCloud(quality=PhotoScan.HighQuality)
             doc.save()
-        end = time.time()
-        duration = end - start
-        log_string = "Dense point cloud build Duration: {}\n".format(duration)
-        self.log_list.append(log_string)
 
+    @TimerDecorator
+    def run_mesh(self):
         # build mesh
-        start = time.time()
         self.check_mesh()
         if self.is_meshed is False or None:
             chunk.buildModel(surface=PhotoScan.Arbitrary,
                              interpolation=PhotoScan.EnabledInterpolation,
                              face_count=2000000)
             doc.save()
-        end = time.time()
-        duration = end - start
-        log_string = "Mesh build Duration: {}\n".format(duration)
-        self.log_list.append(log_string)
 
+    @TimerDecorator
+    def run_texture(self):
         # build texture
-        start = time.time()
         self.check_texture()
         if self.is_textured is False or None:
             chunk.buildUV(mapping=PhotoScan.GenericMapping)
             chunk.buildTexture(blending=PhotoScan.MosaicBlending, size=4096)
             doc.save()
-        end = time.time()
-        duration = end - start
-        log_string = "Texture build Duration: {}\n".format(duration)
-        self.log_list.append(log_string)
 
+    @TimerDecorator
+    def run_obj(self):
         # export obj
         self.export_obj()
         if self.is_obj is not False or None:
             print("Script ran successfully for {}\n\n\n".format(self.name))
-        end_g = time.time()
-        duration = end_g - start_g
-        log_string = "Processing for chunk {} duration: {}\n".format(self.name, duration)
-        self.log_list.append(log_string)
+
+    @TimerDecorator
+    def run_process(self):
+        # process chunk
+        self.run_verification()
+        self.run_alignment()
+        self.run_dense()
+        self.run_mesh()
+        self.run_texture()
 
         # create log here
         self.create_log()
@@ -507,7 +508,16 @@ class AgiChunk:
         return
     
     def check_obj(self):
-        pass
+        full_path = self.format_file_at_chunk(".obj")
+
+        if os.path.exists(full_path):
+            print("{} already exists, skipping".format(full_path))
+            self.obj_path = full_path
+            self.is_obj = True
+            return
+        else:
+            self.is_obj = False
+            return
 
 
 class AgiDoc:

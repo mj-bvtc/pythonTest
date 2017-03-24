@@ -18,13 +18,8 @@
       <file leaf-file-name="RhinoReport.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RhinoReport.py">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state relative-caret-position="-1672">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-=======
             <state relative-caret-position="-1634">
               <caret line="5" column="43" lean-forward="false" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
->>>>>>> pt_serv5
               <folding />
             </state>
           </provider>
@@ -477,13 +472,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RhinoReport.py">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="-1672">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-=======
         <state relative-caret-position="-1634">
           <caret line="5" column="43" lean-forward="false" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
->>>>>>> pt_serv5
           <folding />
         </state>
       </provider>
