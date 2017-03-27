@@ -15,10 +15,6 @@ doc = PhotoScan.app.document
 app = PhotoScan.app
 
 
-
-
-
-
 class AgiChunk:
     """
     A collection of attributes and
