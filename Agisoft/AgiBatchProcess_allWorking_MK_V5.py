@@ -18,13 +18,13 @@ app = PhotoScan.app
 def timer(fn):
     @wraps(fn)
     def wrapper(self, *args, **kwargs):
-        print("instance {} of class {} is decorated".format(self, self.__class__))
-        print("entering...")
-        print("running process...")
+        # print("instance {} of class {} is decorated".format(self, self.__class__))
+        # print("entering...")
+        # print("running process...")
         start = time.time()
         result = fn(self, *args, **kwargs)
         end = time.time()
-        print("exiting...")
+        # print("exiting...")
         dur = end - start
         msg = "'{}' function took {} seconds to run\n\n".format(fn.__name__, round(dur, 2))
         print(msg)
@@ -230,30 +230,15 @@ class AgiChunk:
             full_path = folder + name + "_" + timestamp + ext
         else:
             full_path = folder + name + ext
+        print("Formatted path {}".format(full_path))
         return full_path
 
     def export_obj(self):
-        chunk = self.chunk
-
-        if self.is_obj is False:
-            return
-        if self.obj_path is None:
-            return
-        try:
-            message1 = "Attempting to export:".rjust(150)
-            message2 = self.obj_path.rjust(150)
-            message = message1 + "\n" + message2
-            print(message)
-            chunk.exportModel(full_path) 
-            print("\n")
-            self.obj_path = full_path
-            self.is_obj = True
-
-        except AttributeError:
-            message = "Failed to export: " + full_path
-            print(message)
-            print("\n")
-
+        print("Exporting {}...".format(self.name))
+        print(self.obj_path)
+        self.chunk.exportModel(self.obj_path)
+        print("\n")
+        self.is_obj = True
         return
 
     @timer
@@ -314,11 +299,11 @@ class AgiChunk:
 
     @timer
     def run_obj(self):
-        chunk = self.chunk
+        self.check_obj()
+
         # export obj
-        self.export_obj()
-        if self.is_obj is not False or None:
-            print("Script ran successfully for {}\n\n\n".format(self.name))
+        if self.is_obj is False:
+            self.export_obj()
 
     @timer
     def elapsed_time(self):
@@ -532,7 +517,9 @@ class AgiChunk:
             self.is_obj = True
             return
         else:
+            print("No obj in this chunks folder")
             self.is_obj = False
+            self.obj_path = full_path
             return
 
 
