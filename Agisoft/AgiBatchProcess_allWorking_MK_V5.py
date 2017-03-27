@@ -15,6 +15,24 @@ doc = PhotoScan.app.document
 app = PhotoScan.app
 
 
+def timer(fn):
+    @wraps(fn)
+    def wrapper(self, *args, **kwargs):
+        print("instance {} of class {} is decorated".format(self, self.__class__))
+        print("entering...")
+        print("running process...")
+        start = time.time()
+        result = fn(self, *args, **kwargs)
+        end = time.time()
+        print("exiting...")
+        dur = end - start
+        msg = "'{}' function took {} seconds to run\n\n".format(fn.__name__, round(dur, 2))
+        print(msg)
+        self.log_list.append(msg)  # send log to class????
+        return result
+    return wrapper
+
+
 class AgiChunk:
     """
     A collection of attributes and
@@ -45,31 +63,13 @@ class AgiChunk:
         self.log_list = []
         self.indent = "\t"*5
 
-    @wraps
-    def timer(self, fn):
-        log = self.log_list
-
-        @wraps(fn)
-        def wrapper(*args, **kwargs):
-            start = time.time()
-            print("Starting to wrap")
-            result = fn(*args, **kwargs)
-            end = time.time()
-            dur = end - start
-            print("Ending wrap")
-            log_string = "Duration for function '{}' is {} seconds ".format(fn.__name__, round(dur, 2))
-            print("LOG LIST HERRREEEEREREREREE: " + log_string)
-            log.append(log_string)
-            print(list(log))
-            return result
-
-        return wrapper
-
     def create_log(self):
         # writes log file in folder with each chunk
         full_path = self.format_file_at_chunk(".txt", add_timestamp=True)
         report = open(full_path, "w")
         report.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n\n")
+        report.write("Project file path: {}\n".format(doc.path))
+        report.write("Chunk: {}\n\n".format(self.name))
         for log in self.log_list:
             report.write(log)
         report.close()
@@ -321,7 +321,7 @@ class AgiChunk:
             print("Script ran successfully for {}\n\n\n".format(self.name))
 
     @timer
-    def run_process(self):
+    def elapsed_time(self):
         chunk = self.chunk
         # process chunk
         self.run_verification()
@@ -329,10 +329,14 @@ class AgiChunk:
         self.run_dense()
         self.run_mesh()
         self.run_texture()
+        self.run_obj()
+        return    
 
+    @timer
+    def run_process(self):
+        self.elapsed_time()
         # create log here
         self.create_log()
-        return    
 
     def check_exists(self):
         chunk = self.chunk
