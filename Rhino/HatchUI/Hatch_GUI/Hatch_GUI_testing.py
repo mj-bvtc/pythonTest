@@ -12,22 +12,18 @@ from System.Windows.Forms import RadioButton
 class HatchUI:
     """The user interface to select hatch and rotation"""
 
-    def __init__(self):
+    def __init__(self, txt_path):
 
         # Make a new form
         self.form = Meier_UI_Utility.UIForm("Hatch Options")
         self.patterns = []
-        self.txt_path = "V:\MeshLab\_Synchronization\Hatch_GUI\hatches.txt"
+        self.txt_path = txt_path
         self.hatch_list = []
         self.selected_hatch = None
         self.load_hatches()
         self.form.panel.addIndent(21)
         self.add_controls()
         self.form.layoutControls()
-    
-    def show(self):
-        Rhino.UI.Dialogs.ShowSemiModal(self.form)
-        return
 
     def add_controls(self):
         panel = self.form.panel
@@ -134,8 +130,8 @@ def main():
     h = HatchObjects()
     h.get_objects()
     h.check_obj_list()
-    ui = HatchUI()
-    ui.show()
+    ui = HatchUI("V:\MeshLab\_Synchronization\Hatch_GUI\hatches.txt")
+    Rhino.UI.Dialogs.ShowSemiModal(ui.form)
     hatch = ui.selected_hatch
     crvs = h.closed_curves
     for crv in crvs:

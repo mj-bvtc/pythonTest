@@ -1,0 +1,18 @@
+1,ZIGZAG,Treat for Mortar,0.917,45,V:\MeshLab\_Synchronization\Hatch_GUI\treat_for_mortar.jpg
+2,ANSI37,Cells,0.5,0,V:\MeshLab\_Synchronization\Hatch_GUI\cells.jpg
+3,ANSI37,Handhold,0.3125,0,V:\MeshLab\_Synchronization\Hatch_GUI\handhold.jpg
+4,LINE,Typical Chiselface,0.3958,90,V:\MeshLab\_Synchronization\Hatch_GUI\typical_chiselface.jpg
+5,ANSI31,Perforated Area,0.2916,0,V:\MeshLab\_Synchronization\Hatch_GUI\perforation_area.jpg
+6,ANSI34,Aluminum,0.125,0,V:\MeshLab\_Synchronization\Hatch_GUI\aluminum.jpg
+7,ANSI37,CMU,0.5,0,V:\MeshLab\_Synchronization\Hatch_GUI\CMU.jpg
+8,AR-CONC,Concrete,0.0157,0,V:\MeshLab\_Synchronization\Hatch_GUI\concrete.jpg
+9,NET,Insulation,0.375,0,V:\MeshLab\_Synchronization\Hatch_GUI\insulation.jpg
+10,AR-SAND,Sheathing,0.0313,0,V:\MeshLab\_Synchronization\Hatch_GUI\sheathing.jpg
+11,ANSI32,Steel,0.125,0,V:\MeshLab\_Synchronization\Hatch_GUI\steel.jpg
+12,AR-SAND,Terra Cotta,0.0157,0,V:\MeshLab\_Synchronization\Hatch_GUI\terra_cotta.jpg
+13,ANSI31,Back-up Masonry,1.252,0,V:\MeshLab\_Synchronization\Hatch_GUI\back_up_masonry.jpg
+14,ANSI31,Face Brick,0.5634,0,V:\MeshLab\_Synchronization\Hatch_GUI\face_brick.jpg
+15,AR_CONC,Mortar or Grout,0.0157,0,V:\MeshLab\_Synchronization\Hatch_GUI\mortar_or_grout.jpg
+16,AR-ROOF,Random Textured Surface,0.25,0,V:\MeshLab\_Synchronization\Hatch_GUI\random_textured_surface.jpg
+17,AR-SAND,Textured Surface,0.0625,0,V:\MeshLab\_Synchronization\Hatch_GUI\textured_surface.jpg
+18,AR-ROOF,Wood Face Texture,0.0365,90,V:\MeshLab\_Synchronization\Hatch_GUI\wood_face_surface.jpg
