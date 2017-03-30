@@ -315,7 +315,17 @@ class AgiChunk:
         self.run_mesh()
         self.run_texture()
         self.run_obj()
-        return    
+        self.export_report()
+        return
+
+    @timer
+    def export_report(self):
+        chunk = self.chunk
+        path = self.format_file_at_chunk(".pdf", add_timestamp=True)
+        if os.path.exists(path):
+            return
+        chunk.exportReport(path)
+        return
 
     @timer
     def run_process(self):
