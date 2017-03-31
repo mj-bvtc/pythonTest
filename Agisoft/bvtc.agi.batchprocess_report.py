@@ -599,9 +599,12 @@ class AgiDoc:
     def process_all_chunks(self):
         print("\n\n\n")
         # Main project loop, iterate through all chunks + process them
+        count = 0
         for chunk in self.chunks:
             agi = AgiChunk(chunk, self)
-            agi.reset_view()
+            if count > 0:
+                agi.reset_view()
+            count += 1
             agi.run_process()
 
         PhotoScan.app.messageBox("Script Complete! Hooray!!!")
