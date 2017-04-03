@@ -1,4 +1,10 @@
-"""Learning how to call a recursive function in python"""
+"""
+Learning how to call a recursive function in python.
+
+This module simply recreates the factorial 
+algorithm via a recursive function call. 
+"""
+
 
 def factorial(number):
     if number <= 1:
@@ -9,4 +15,8 @@ def factorial(number):
         print(result)
         return result
 
-factorial(100)
+def main():
+    factorial(5)
+
+if __name__ == "__main__":
+    main()
