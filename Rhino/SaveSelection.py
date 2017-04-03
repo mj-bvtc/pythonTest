@@ -31,8 +31,6 @@ class SaveGuid:
             line = line.replace("\n","")
             self.guids.append(line)
 
-
-
     def select_all(self):
         rs.EnableRedraw(False)
         rs.SelectObjects(self.guids)
