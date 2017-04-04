@@ -1,12 +1,15 @@
 import rhinoscriptsyntax as rs
 import Rhino
 import uuid
-
+from DetailCenter import DetailCenter
 
 class PaperDrawing:
     """A projection of drawing to modelspace"""
     def __init__(self):
         self.view = rs.CurrentView()
+        self.scale = None
+        self.detail_id = None
+        self.get_detail()
         self.detail = rs.CurrentDetail(self.view)
         self.is_in_detail = None
         self.polysrfs = None
@@ -14,6 +17,14 @@ class PaperDrawing:
         self.dwg_crvs = None
         self.paper_dwg = None
         self.block_name = None
+
+
+
+    def get_detail(self):
+        self.detail_id = rs.GetObject("Select detail view", rs.filter.detail)
+        self.scale = rs.DetailScale(self.detail_id)
+        rs.CurrentDetail(self.view, self.detail_id)
+        return
 
     def check_in_detail(self):
         type = Rhino.RhinoDoc.ActiveDoc.Views.ActiveView.ActiveViewport.ViewportType
@@ -27,7 +38,7 @@ class PaperDrawing:
         #get model
     
     def get_objects(self):
-        objs = rs.GetObjects("Select objects to draw", filter=28)
+        objs = rs.GetObjects("Select objects to draw", rs.filter.polysurface)
         rs.SelectObjects(objs)
         self.polysrfs = objs
         return
@@ -72,6 +83,20 @@ class PaperDrawing:
         moved = rs.OrientObject(self.paper_dwg, ref_pts, target_pts, flags=2)
         self.paper_dwg = moved
 
+    def scale_block(self):
+        origin = [0, 0, 0]
+        detail = Rhino.RhinoDoc.ActiveDoc.Objects.Find(self.detail_id)
+        scale = detail.Geometry.PageToModelRatio
+        print scale
+        sf = [self.scale, self.scale, self.scale]
+        self.block = rs.ScaleObject(self.paper_dwg, origin, sf)
+
+    def move_block(self):
+        center = DetailCenter(self.detail_id)
+        box = rs.BoundingBox(self.paper_dwg)
+        rec = box[0:4]
+        rs.MoveObject(self.paper_dwg, center)
+
     def run(self):
         self.check_in_detail()
         if self.is_in_detail is False:
@@ -81,7 +106,8 @@ class PaperDrawing:
         self.add_block()
         self.switch_view()
         self.insert_block()
-        self.orient_block()
+        self.scale_block()
+        self.move_block()
         print "Script Finished"
         return 
 
@@ -136,11 +162,10 @@ def draw_model_paperspace():
 
 
 def main():
-    try:
-        pd = PaperDrawing()
-        pd.run()
-    except Exception:
-        print "Something went wrong"
+
+    pd = PaperDrawing()
+    pd.run()
+
 
 if __name__ == "__main__":
     main()

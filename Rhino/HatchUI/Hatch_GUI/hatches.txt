@@ -13,6 +13,6 @@
 13,ANSI31,Back-up Masonry,1.252,0,V:\MeshLab\_Synchronization\Hatch_GUI\back_up_masonry.jpg
 14,ANSI31,Face Brick,0.5634,0,V:\MeshLab\_Synchronization\Hatch_GUI\face_brick.jpg
 15,AR_CONC,Mortar or Grout,0.0157,0,V:\MeshLab\_Synchronization\Hatch_GUI\mortar_or_grout.jpg
-16,AR-ROOF,Random Textured Surface,0.25,0,V:\MeshLab\_Synchronization\Hatch_GUI\random_textured_surface.jpg
+16,AR-RROOF,Random Textured Surface,0.25,0,V:\MeshLab\_Synchronization\Hatch_GUI\random_textured_surface.jpg
 17,AR-SAND,Textured Surface,0.0625,0,V:\MeshLab\_Synchronization\Hatch_GUI\textured_surface.jpg
-18,AR-ROOF,Wood Face Texture,0.0365,90,V:\MeshLab\_Synchronization\Hatch_GUI\wood_face_surface.jpg
+18,AR-RROOF,Wood Face Texture,0.0365,90,V:\MeshLab\_Synchronization\Hatch_GUI\wood_face_surface.jpg

@@ -17,7 +17,7 @@ class HatchUI:
         # Make a new form
         self.form = Meier_UI_Utility.UIForm("Hatch Options")
         self.patterns = []
-        self.txt_path = "V:\MeshLab\_Synchronization\Hatch_GUI\hatches.txt"
+        self.txt_path = "V:\MeshLab\_FieldSurvey\MK\python\pythonTest\Rhino\HatchUI\Hatch_GUI\hatches.txt"
         self.hatch_list = []
         self.selected_hatch = None
         self.load_hatches()
@@ -140,6 +140,7 @@ def main():
     crvs = h.closed_curves
     for crv in crvs:
         rs.AddHatch(crv, hatch.name, hatch.scale, hatch.rotation)
+
 
 
 
