@@ -10,12 +10,12 @@ def curve_boolean():
 
 def hatch_region(pattern, rotation, scale):
     region = curve_boolean()
-    rs.AddHatches(region, pattern, scale, rotation)
+    hatches = rs.AddHatches(region, pattern, scale, rotation)
+    return region, hatches
 
 
 def main():
     ui = HatchUI()
-    ui.txt_path = "V:\MeshLab\_FieldSurvey\MK\python\pythonTest\Rhino\HatchUI\Hatch_GUI\hatches.txt"
     ui.show()
     hatch = ui.selected_hatch
 
