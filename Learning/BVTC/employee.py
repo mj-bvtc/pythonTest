@@ -14,6 +14,7 @@ class Employee(common.Common):
         self.department = None
         self.start_date = None
         self.ssn = None
+        self.certifications = []
 
     @property
     def full_name(self):
