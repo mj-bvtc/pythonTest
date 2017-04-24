@@ -39,7 +39,8 @@ class AgiChunk:
     commands for processing agi chunks
     """
 
-    def __init__(self, chunk, agi_doc):
+    def __init__(self, chunk, agi_doc, save=True):
+        self.save = save
         self.name = None
         self.agi_doc = agi_doc
         self.chunk = chunk
@@ -62,6 +63,14 @@ class AgiChunk:
         self.log = None
         self.log_list = []
         self.indent = "\t"*5
+
+    def save_doc(self):
+        if self.save is False:
+            print("Save turned off, skipping save document")
+            return
+        else:
+            print("Saving document!")
+            doc.save()
 
     def create_log(self):
         # writes log file in folder with each chunk
@@ -214,7 +223,7 @@ class AgiChunk:
         print(message)
         return
 
-    def format_file_at_chunk(self, ext, add_timestamp=False):
+    def format_file_at_chunk(self, ext, add_timestamp=True):
         timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
         chunk = self.chunk
         # gets folder containing chunk pics/source folder instead of building it
@@ -234,12 +243,16 @@ class AgiChunk:
         return full_path
 
     def export_obj(self):
-        print("Exporting {}...".format(self.name))
-        print(self.obj_path)
-        self.chunk.exportModel(self.obj_path)
-        print("\n")
-        self.is_obj = True
-        return
+        if self.save is False:
+            print("Save turned off, skipping export obj")
+            return
+        else:
+            print("Exporting {}...".format(self.name))
+            print(self.obj_path)
+            self.chunk.exportModel(self.obj_path)
+            print("\n")
+            self.is_obj = True
+            return
 
     @timer
     def run_verification(self):
@@ -263,7 +276,7 @@ class AgiChunk:
             self.check_enough_points()
             if self.is_enough_points is False or None:
                 return
-            doc.save()
+            self.save_doc()
 
     @timer
     def run_dense(self):
@@ -274,7 +287,7 @@ class AgiChunk:
         self.check_dense()
         if self.is_dense is False or None:
             chunk.buildDenseCloud(quality=PhotoScan.HighQuality)
-            doc.save()
+            self.save_doc()
 
     @timer
     def run_mesh(self):
@@ -285,7 +298,7 @@ class AgiChunk:
             chunk.buildModel(surface=PhotoScan.Arbitrary,
                              interpolation=PhotoScan.EnabledInterpolation,
                              face_count=2000000)
-            doc.save()
+            self.save_doc()
 
     @timer
     def run_texture(self):
@@ -295,7 +308,7 @@ class AgiChunk:
         if self.is_textured is False or None:
             chunk.buildUV(mapping=PhotoScan.GenericMapping)
             chunk.buildTexture(blending=PhotoScan.MosaicBlending, size=4096)
-            doc.save()
+            self.save_doc()
 
     @timer
     def run_obj(self):
@@ -320,12 +333,16 @@ class AgiChunk:
 
     @timer
     def export_report(self):
-        chunk = self.chunk
-        path = self.format_file_at_chunk(".pdf", add_timestamp=True)
-        if os.path.exists(path):
+        if self.save is False:
+            print("Save is off, skipping export report")
             return
-        chunk.exportReport(path)
-        return
+        else:
+            chunk = self.chunk
+            path = self.format_file_at_chunk(".pdf", add_timestamp=True)
+            if os.path.exists(path):
+                return
+            chunk.exportReport(path)
+            return
 
     @timer
     def run_process(self):
@@ -533,35 +550,39 @@ class AgiChunk:
             return
 
     def reset_view(self, magnification=80):
-        doc.chunk = self.chunk
-        chunk = self.chunk
-        T = chunk.transform.matrix
-        viewpoint = PhotoScan.app.viewpoint
-        cx = viewpoint.width
-        cy = viewpoint.height
+        try:
+            doc.chunk = self.chunk
+            chunk = self.chunk
+            T = chunk.transform.matrix
+            viewpoint = PhotoScan.app.viewpoint
+            cx = viewpoint.width
+            cy = viewpoint.height
 
-        region = chunk.region
-        r_center = region.center
-        r_rotate = region.rot
-        r_size = region.size
-        r_vert = list()
+            region = chunk.region
+            r_center = region.center
+            r_rotate = region.rot
+            r_size = region.size
+            r_vert = list()
 
-        for i in range(8):  # bounding box corners
-            r_vert.append(PhotoScan.Vector(
-                [0.5 * r_size[0] * ((i & 2) - 1), r_size[1] * ((i & 1) - 0.5), 0.25 * r_size[2] * ((i & 4) - 2)]))
-            r_vert[i] = r_center + r_rotate * r_vert[i]
+            for i in range(8):  # bounding box corners
+                r_vert.append(PhotoScan.Vector(
+                    [0.5 * r_size[0] * ((i & 2) - 1), r_size[1] * ((i & 1) - 0.5), 0.25 * r_size[2] * ((i & 4) - 2)]))
+                r_vert[i] = r_center + r_rotate * r_vert[i]
 
-        height = T.mulv(r_vert[1] - r_vert[0]).norm()
-        width = T.mulv(r_vert[2] - r_vert[0]).norm()
+            height = T.mulv(r_vert[1] - r_vert[0]).norm()
+            width = T.mulv(r_vert[2] - r_vert[0]).norm()
 
-        if width / cx > height / cy:
-            scale = cx / width
-        else:
-            scale = cy / height
+            if width / cx > height / cy:
+                scale = cx / width
+            else:
+                scale = cy / height
 
-        PhotoScan.app.viewpoint.coo = T.mulp(chunk.region.center)
-        PhotoScan.app.viewpoint.mag = magnification
-        # PhotoScan.app.viewpoint.rot = chunk.transform.rotation * r_rotate
+            PhotoScan.app.viewpoint.coo = T.mulp(chunk.region.center)
+            PhotoScan.app.viewpoint.mag = magnification
+            # PhotoScan.app.viewpoint.rot = chunk.transform.rotation * r_rotate
+        except Exception:
+            print("Could not reset view")
+            return
 
 
 class AgiDoc:
@@ -570,13 +591,19 @@ class AgiDoc:
     Agisoft documents
     """
 
-    def __init__(self):
+    def __init__(self, save=True):
         self.doc = doc
         self.path = None
         self.is_saved = None
         self.chunks = doc.chunks
+        self.save = save
+        self.log_list = []
+        self.log_path = None
+        self.log = None
 
     def get_path(self):
+        if self.save is False:
+            return
         path = app.getSaveFileName("Save Project As") + ".psx"
         doc.save(path)
         print("Saved to path:  " + path)
@@ -596,21 +623,49 @@ class AgiDoc:
             self.is_saved = True
             return
 
+    @timer
     def process_all_chunks(self):
         print("\n\n\n")
         # Main project loop, iterate through all chunks + process them
         count = 0
         for chunk in self.chunks:
             try:
-                agi = AgiChunk(chunk, self)
+                agi = AgiChunk(chunk, self, self.save)
                 if count > 0:
                     agi.reset_view()
+                    pass
                 count += 1
                 agi.run_process()
             except Exception:
+                print("Error Here-----------------------------")
                 continue
 
-        PhotoScan.app.messageBox("Script Complete! Hooray!!!")
+    def create_log(self):
+        # writes log file in folder with each chunk
+        report = open(self.log_path, "w")
+        report.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n\n")
+        report.write("Project file path: {}\n".format(self.log_path))
+        for log in self.log_list:
+            report.write(log)
+        report.close()
+        print("Created log file: {}\n".format(self.log_path))
+        return
+
+    def format_log_path(self, add_timestamp=True):
+        timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+        if self.path is None:
+            return
+        else:
+            file_name = os.path.basename(self.path)
+            name = os.path.splitext(file_name)[0]
+            root = os.path.dirname(self.path)
+
+            if add_timestamp is True:
+                self.log_path = "{}/{}_Report_{}.txt".format(root, name, timestamp)
+            else:
+                self.log_path = "{}/{}_Report.txt".format(root, name)
+            print("Formatted path {}".format(self.log_path))
+            return self.log_path
 
 
 class View:
@@ -637,10 +692,12 @@ def mid_pt(pt_a, pt_b):
 
 
 def main():
-    test = AgiDoc()
+    test = AgiDoc(save=True)
     test.check_save()
     test.process_all_chunks()
-
+    test.format_log_path()
+    test.create_log()
+    PhotoScan.app.messageBox("Script Complete! Hooray!!!")
 
 if __name__ == "__main__":
     main()
