@@ -1,6 +1,5 @@
 import common
 
-
 class Business(common.Common):
     """A entity that produces a product"""
     def __init__(self, name, product):
