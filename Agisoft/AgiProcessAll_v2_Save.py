@@ -78,6 +78,7 @@ class AgiChunk:
         report = open(full_path, "w")
         report.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n\n")
         report.write("Project file path: {}\n".format(doc.path))
+        report.write("User: {} @ {}\n".format(os.getlogin(), os.environ['COMPUTERNAME']))
         report.write("Chunk: {}\n\n".format(self.name))
         for log in self.log_list:
             report.write(log)
@@ -645,6 +646,7 @@ class AgiDoc:
         report = open(self.log_path, "w")
         report.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n\n")
         report.write("Project file path: {}\n".format(self.log_path))
+        report.write("User: {} @ {}\n\n".format(os.getlogin(), os.environ['COMPUTERNAME']))
         for log in self.log_list:
             report.write(log)
         report.close()
@@ -692,7 +694,7 @@ def mid_pt(pt_a, pt_b):
 
 
 def main():
-    test = AgiDoc(save=True)
+    test = AgiDoc(save=False)
     test.check_save()
     test.process_all_chunks()
     test.format_log_path()
