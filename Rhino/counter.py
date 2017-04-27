@@ -9,7 +9,7 @@ def counting(numCounts, height=56, deletePt=False):
         rs.AddText(count, point)
         
         
-DI
+
 
 def main():
     counting(1000)

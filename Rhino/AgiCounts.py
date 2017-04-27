@@ -68,7 +68,7 @@ class Block:
             k,v = line.split(",")
             if getattr(self, k) is None:
                 setattr(self, k, v.replace("\n",""))
-
+rs.point
 
 def main():
 
