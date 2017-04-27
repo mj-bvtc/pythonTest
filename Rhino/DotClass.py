@@ -65,6 +65,7 @@ def random_name():
     num = str(random.randint(1, 50))
     return random_letter() + num
 
+"""
 rs.EnableRedraw(False)
 
 objs = [Count() for i in range(500)]
@@ -74,6 +75,24 @@ for obj in objs:
     obj.add_dots()
 
 rs.EnableRedraw(True)
+
+"""
+
+def redraw_fast(fn):
+    def wrapper(*args, **kwargs):
+        rs.EnableRedraw(False)
+        print "entering"
+        result = fn(*args, **kwargs)
+        rs.EnableRedraw(True)
+        print "exiting"
+        return result
+    return wrapper
+
+@redraw_fast
+def hi():
+    print "hi"
+
+hi()
 
 
 """
@@ -88,7 +107,7 @@ c.add_dots()
 rs.EnableRedraw(True)
 
 print c.count
-
-"""
 print "script finished"
+"""
+
 
