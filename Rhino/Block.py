@@ -65,7 +65,7 @@ class Block:
     def get_point(self):
         self.point = rs.GetPoint("Select Point")
     
-    def add_dot(self, show_instance=False):
+    def add_dot(self, show_instance=True):
         if self.point is None:
             self.get_point()
         if show_instance is True:
@@ -153,17 +153,17 @@ class Zone:
 
 def main():
     d = Data()
-    d.style = "CS"
-    d.style_number = 12
+    d.style = "P"
+    d.style_number = 16
     d.project = "P15-0509"
     d.phase = "Base"
 
-    add_blocks(5, d)
+    add_blocks(2, d)
     
     for block in Block.instances:
         block.update()
 
-    os.startfile(r"C:\Users\mkreidler\Desktop\test.csv")
+    #os.startfile(r"C:\Users\mkreidler\Desktop\test.csv")
     #print Block.quantity
 
 
