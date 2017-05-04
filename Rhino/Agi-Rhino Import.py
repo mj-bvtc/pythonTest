@@ -8,7 +8,7 @@ def FindOBJs():
     count=0
     ## Find folder for Agi Renders ##
     
-    agiFolder="V:\Projects Archived\Philadelphia Museum of Art- Roof Tile (10-5-06)\Meshlab\Agi-Renders"
+    agiFolder="V:\Projects\307 Sainte-Catherine\Field Survey 4-12-17\Agi-Renders"
     if not agiFolder: return
     
     ## Loop through files ##

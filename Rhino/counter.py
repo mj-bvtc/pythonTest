@@ -1,7 +1,7 @@
 import rhinoscriptsyntax as rs
 
 
-def counting(numCounts, height=1, deletePt=False):
+def counting(numCounts, height=56, deletePt=False):
     for i in range(numCounts):
         point = rs.GetPoint("select point")
         rs.AddPoint(point)
