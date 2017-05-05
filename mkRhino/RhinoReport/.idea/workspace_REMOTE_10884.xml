@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b8c2655e-3538-4471-8068-f350e0851d1f" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="RhinoReport.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RhinoReport.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1634">
+              <caret line="5" column="43" lean-forward="false" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AgiBatchProcess_allWorking_MK_V4.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../../Agisoft/AgiBatchProcess_allWorking_MK_V4.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="89">
+              <caret line="523" column="0" lean-forward="true" selection-start-line="523" selection-start-column="0" selection-end-line="523" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#94#1" expanded="false" />
+                <element signature="e#96#112#0" expanded="false" />
+                <element signature="e#252#17237#0" expanded="false" />
+                <element signature="e#252#337#1" expanded="false" />
+                <element signature="e#387#1037#0" expanded="false" />
+                <element signature="e#1073#1533#0" expanded="false" />
+                <element signature="e#1564#2172#0" expanded="false" />
+                <element signature="e#2210#4405#0" expanded="false" />
+                <element signature="e#2685#3900#0" expanded="false" />
+                <element signature="e#2900#2982#0" expanded="false" />
+                <element signature="e#3153#3234#0" expanded="false" />
+                <element signature="e#3333#3403#0" expanded="false" />
+                <element signature="e#4442#6972#0" expanded="false" />
+                <element signature="e#4646#4761#0" expanded="false" />
+                <element signature="e#4689#4761#0" expanded="false" />
+                <element signature="e#4973#5036#0" expanded="false" />
+                <element signature="e#5856#6031#0" expanded="false" />
+                <element signature="e#5920#5977#0" expanded="false" />
+                <element signature="e#7044#7655#0" expanded="false" />
+                <element signature="e#7691#8582#0" expanded="false" />
+                <element signature="e#7843#7916#0" expanded="false" />
+                <element signature="e#7965#8265#0" expanded="false" />
+                <element signature="e#8292#8417#0" expanded="false" />
+                <element signature="e#8621#11013#0" expanded="false" />
+                <element signature="e#8970#9216#0" expanded="false" />
+                <element signature="e#9226#9241#0" expanded="false" />
+                <element signature="e#9386#9461#0" expanded="false" />
+                <element signature="e#9771#9963#0" expanded="false" />
+                <element signature="e#10268#10415#0" expanded="false" />
+                <element signature="e#11055#11330#0" expanded="false" />
+                <element signature="e#11090#11170#0" expanded="false" />
+                <element signature="e#11197#11330#0" expanded="false" />
+                <element signature="e#11369#11617#0" expanded="false" />
+                <element signature="e#11413#11517#0" expanded="false" />
+                <element signature="e#11544#11617#0" expanded="false" />
+                <element signature="e#11658#11985#0" expanded="false" />
+                <element signature="e#11709#11832#0" expanded="false" />
+                <element signature="e#11859#11985#0" expanded="false" />
+                <element signature="e#12022#14684#0" expanded="false" />
+                <element signature="e#12022#12076#0" expanded="false" />
+                <element signature="e#12474#13618#0" expanded="false" />
+                <element signature="e#12696#13618#0" expanded="false" />
+                <element signature="e#12956#13618#0" expanded="false" />
+                <element signature="e#13362#13511#0" expanded="false" />
+                <element signature="e#13677#14127#0" expanded="false" />
+                <element signature="e#13784#13891#0" expanded="false" />
+                <element signature="e#14370#14474#0" expanded="false" />
+                <element signature="e#14721#15028#0" expanded="false" />
+                <element signature="e#14760#14879#0" expanded="false" />
+                <element signature="e#14906#15028#0" expanded="false" />
+                <element signature="e#15064#15367#0" expanded="false" />
+                <element signature="e#15109#15223#0" expanded="false" />
+                <element signature="e#15250#15367#0" expanded="false" />
+                <element signature="e#15404#15731#0" expanded="false" />
+                <element signature="e#15471#15568#0" expanded="false" />
+                <element signature="e#15595#15731#0" expanded="false" />
+                <element signature="e#15770#16357#0" expanded="false" />
+                <element signature="e#15814#16196#0" expanded="false" />
+                <element signature="e#15915#16039#0" expanded="false" />
+                <element signature="e#16075#16196#0" expanded="false" />
+                <element signature="e#16241#16357#0" expanded="false" />
+                <element signature="e#16396#16679#0" expanded="false" />
+                <element signature="e#16462#16557#0" expanded="false" />
+                <element signature="e#16584#16679#0" expanded="false" />
+                <element signature="e#16724#17194#0" expanded="false" />
+                <element signature="e#16905#17124#0" expanded="false" />
+                <element signature="e#17233#17237#0" expanded="false" />
+                <element signature="e#17258#17318#1" expanded="false" />
+                <element signature="e#18070#18254#0" expanded="false" />
+                <element signature="e#18132#18191#0" expanded="false" />
+                <element signature="e#18286#18424#0" expanded="false" />
+                <element signature="e#18455#18567#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>file already saved</find>
+      <find>already saved</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/HiddenFiles.py" />
+        <option value="$PROJECT_DIR$/Counting.py" />
+        <option value="$PROJECT_DIR$/RhinoReport.py" />
+        <option value="$PROJECT_DIR$/../../Agisoft/AgiBatchProcess_allWorking_MK_V4.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RhinoReport" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RhinoReport" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+  </component>
+  <component name="RunManager" selected="Python.RhinoReport">
+    <configuration default="false" name="RhinoReport" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="RhinoReport" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RhinoReport.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="HiddenFiles" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="RhinoReport" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/HiddenFiles.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Counting" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="RhinoReport" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Counting.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="RhinoReport" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="RhinoReport" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="RhinoReport" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="RhinoReport" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="RhinoReport" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="RhinoReport" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="RhinoReport" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Python.RhinoReport" />
+      <item index="1" class="java.lang.String" itemvalue="Python.HiddenFiles" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Counting" />
+    </list>
+    <recent_temporary>
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Python.RhinoReport" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Counting" />
+        <item index="2" class="java.lang.String" itemvalue="Python.HiddenFiles" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b8c2655e-3538-4471-8068-f350e0851d1f" name="Default" comment="" />
+      <created>1490107731504</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1490107731504</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1912" y="-8" width="1936" height="1096" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32987553" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32987553" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32987553" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/RhinoReport.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Counting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HiddenFiles.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../MK_Python Scripts/AgiBatchProcess_allWorking_MK_V3.py" />
+    <entry file="file://$PROJECT_DIR$/Counting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HiddenFiles.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RhinoReport.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1634">
+          <caret line="5" column="43" lean-forward="false" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Agisoft/AgiBatchProcess_allWorking_MK_V4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="523" column="0" lean-forward="true" selection-start-line="523" selection-start-column="0" selection-end-line="523" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#94#1" expanded="false" />
+            <element signature="e#96#112#0" expanded="false" />
+            <element signature="e#252#17237#0" expanded="false" />
+            <element signature="e#252#337#1" expanded="false" />
+            <element signature="e#387#1037#0" expanded="false" />
+            <element signature="e#1073#1533#0" expanded="false" />
+            <element signature="e#1564#2172#0" expanded="false" />
+            <element signature="e#2210#4405#0" expanded="false" />
+            <element signature="e#2685#3900#0" expanded="false" />
+            <element signature="e#2900#2982#0" expanded="false" />
+            <element signature="e#3153#3234#0" expanded="false" />
+            <element signature="e#3333#3403#0" expanded="false" />
+            <element signature="e#4442#6972#0" expanded="false" />
+            <element signature="e#4646#4761#0" expanded="false" />
+            <element signature="e#4689#4761#0" expanded="false" />
+            <element signature="e#4973#5036#0" expanded="false" />
+            <element signature="e#5856#6031#0" expanded="false" />
+            <element signature="e#5920#5977#0" expanded="false" />
+            <element signature="e#7044#7655#0" expanded="false" />
+            <element signature="e#7691#8582#0" expanded="false" />
+            <element signature="e#7843#7916#0" expanded="false" />
+            <element signature="e#7965#8265#0" expanded="false" />
+            <element signature="e#8292#8417#0" expanded="false" />
+            <element signature="e#8621#11013#0" expanded="false" />
+            <element signature="e#8970#9216#0" expanded="false" />
+            <element signature="e#9226#9241#0" expanded="false" />
+            <element signature="e#9386#9461#0" expanded="false" />
+            <element signature="e#9771#9963#0" expanded="false" />
+            <element signature="e#10268#10415#0" expanded="false" />
+            <element signature="e#11055#11330#0" expanded="false" />
+            <element signature="e#11090#11170#0" expanded="false" />
+            <element signature="e#11197#11330#0" expanded="false" />
+            <element signature="e#11369#11617#0" expanded="false" />
+            <element signature="e#11413#11517#0" expanded="false" />
+            <element signature="e#11544#11617#0" expanded="false" />
+            <element signature="e#11658#11985#0" expanded="false" />
+            <element signature="e#11709#11832#0" expanded="false" />
+            <element signature="e#11859#11985#0" expanded="false" />
+            <element signature="e#12022#14684#0" expanded="false" />
+            <element signature="e#12022#12076#0" expanded="false" />
+            <element signature="e#12474#13618#0" expanded="false" />
+            <element signature="e#12696#13618#0" expanded="false" />
+            <element signature="e#12956#13618#0" expanded="false" />
+            <element signature="e#13362#13511#0" expanded="false" />
+            <element signature="e#13677#14127#0" expanded="false" />
+            <element signature="e#13784#13891#0" expanded="false" />
+            <element signature="e#14370#14474#0" expanded="false" />
+            <element signature="e#14721#15028#0" expanded="false" />
+            <element signature="e#14760#14879#0" expanded="false" />
+            <element signature="e#14906#15028#0" expanded="false" />
+            <element signature="e#15064#15367#0" expanded="false" />
+            <element signature="e#15109#15223#0" expanded="false" />
+            <element signature="e#15250#15367#0" expanded="false" />
+            <element signature="e#15404#15731#0" expanded="false" />
+            <element signature="e#15471#15568#0" expanded="false" />
+            <element signature="e#15595#15731#0" expanded="false" />
+            <element signature="e#15770#16357#0" expanded="false" />
+            <element signature="e#15814#16196#0" expanded="false" />
+            <element signature="e#15915#16039#0" expanded="false" />
+            <element signature="e#16075#16196#0" expanded="false" />
+            <element signature="e#16241#16357#0" expanded="false" />
+            <element signature="e#16396#16679#0" expanded="false" />
+            <element signature="e#16462#16557#0" expanded="false" />
+            <element signature="e#16584#16679#0" expanded="false" />
+            <element signature="e#16724#17194#0" expanded="false" />
+            <element signature="e#16905#17124#0" expanded="false" />
+            <element signature="e#17233#17237#0" expanded="false" />
+            <element signature="e#17258#17318#1" expanded="false" />
+            <element signature="e#18070#18254#0" expanded="false" />
+            <element signature="e#18132#18191#0" expanded="false" />
+            <element signature="e#18286#18424#0" expanded="false" />
+            <element signature="e#18455#18567#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

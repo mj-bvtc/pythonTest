@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RhinoUI major_ver="2" minor_ver="0" guid="ad31640b-8f2b-40b8-a8d4-9d528495a316" localize="False" default_language_id="1033">
+  <extend_rhino_menus>
+    <menu guid="d58ceae7-fdb0-4104-80da-274b94ad44a9">
+      <text>
+        <locale_1033>Extend Rhino Menus</locale_1033>
+      </text>
+    </menu>
+  </extend_rhino_menus>
+  <menus />
+  <tool_bar_groups>
+    <tool_bar_group guid="052bc91c-4c75-4778-9252-da149b734ce8" dock_bar_guid32="00000000-0000-0000-0000-000000000000" dock_bar_guid64="8d1a72d1-5f9a-4c52-92af-2026ecd78305" active_tool_bar_group="c48f9ee0-5310-430e-a191-e1f03cd1b132" single_file="False" hide_single_tab="False" point_floating="356,339">
+      <text>
+        <locale_1033>BVTC</locale_1033>
+      </text>
+      <tool_bar_group_item guid="c48f9ee0-5310-430e-a191-e1f03cd1b132" major_version="1" minor_version="1">
+        <text>
+          <locale_1033>Toolbar 00</locale_1033>
+        </text>
+        <tool_bar_id>5f02024b-277b-4cc5-b8f3-1a8de987b0cd</tool_bar_id>
+      </tool_bar_group_item>
+      <dock_bar_info dock_bar="False" docking="True" horz="False" visible="True" floating="True" mru_float_style="8192" bar_id="59533" mru_width="32767" point_pos="-2,-2" float_point="356,339" rect_mru_dock_pos="0,0,0,0" dock_location_u="0" dock_location="left" float_size="831,58" />
+    </tool_bar_group>
+  </tool_bar_groups>
+  <tool_bars>
+    <tool_bar guid="5f02024b-277b-4cc5-b8f3-1a8de987b0cd" item_display_style="text_only">
+      <text>
+        <locale_1033>BVTC</locale_1033>
+      </text>
+      <tool_bar_item guid="37a22d47-529a-4e32-ba12-42614d092f8b" button_display_mode="control_only" button_style="normal">
+        <text>
+          <locale_1033>Toolbar item</locale_1033>
+        </text>
+      </tool_bar_item>
+      <tool_bar_item guid="6d145f44-7c19-4c3a-a2fd-bb794bafe6f3" button_display_mode="text_only" display_style_from_parent="False" button_style="normal">
+        <text>
+          <locale_1033>Toolbar item 00</locale_1033>
+        </text>
+        <left_macro_id>e086bdaa-6d9d-4e7e-9904-213fd07fbe7c</left_macro_id>
+      </tool_bar_item>
+      <tool_bar_item guid="53aa59ff-854e-4187-9033-6b6c78926743" button_display_mode="text_only" display_style_from_parent="False" button_style="normal">
+        <text>
+          <locale_1033>Toolbar item 01</locale_1033>
+        </text>
+        <left_macro_id>33e28e84-0f26-4e23-8168-f88546b508ba</left_macro_id>
+      </tool_bar_item>
+      <tool_bar_item guid="4a635e7a-57b0-44fd-bff3-38f918092a6e" button_display_mode="text_only" display_style_from_parent="False" button_style="normal">
+        <text>
+          <locale_1033>Toolbar item 02</locale_1033>
+        </text>
+        <left_macro_id>e05a6b21-0d78-4078-8ab7-a6a2046efad1</left_macro_id>
+      </tool_bar_item>
+      <tool_bar_item guid="c01268d8-6b7f-43b3-a5c4-1148c33ff33e" ImportedFromFileGuid="5a2ef1c0-336b-4f75-9402-067ee7bf4356" ImportedFromItemGuid="5634eeee-0a3e-43de-9ca2-b01664666c6c" button_display_mode="text_only" display_style_from_parent="False" button_style="normal">
+        <text>
+          <locale_1033>Toolbar item 03</locale_1033>
+        </text>
+        <left_macro_id>d2167b2e-6980-4319-bef7-442cd6ed5952</left_macro_id>
+      </tool_bar_item>
+      <tool_bar_item guid="5055d5df-731c-4a35-9a3f-ca1b6691fcf9" ImportedFromFileGuid="5a2ef1c0-336b-4f75-9402-067ee7bf4356" ImportedFromItemGuid="593e6f9e-db84-43bf-9320-03b97b801ed8" button_display_mode="text_only" display_style_from_parent="False" button_style="normal">
+        <text>
+          <locale_1033>Toolbar item 04</locale_1033>
+        </text>
+        <left_macro_id>11c4a984-7ac2-4086-86f0-1da50a5dbab1</left_macro_id>
+      </tool_bar_item>
+    </tool_bar>
+  </tool_bars>
+  <macros>
+    <macro_item guid="e086bdaa-6d9d-4e7e-9904-213fd07fbe7c" bitmap_id="36bfb380-66c1-4825-9d23-fd4dd3fe68d9">
+      <text>
+        <locale_1033>Macro 03</locale_1033>
+      </text>
+      <tooltip>
+        <locale_1033>RemapFront</locale_1033>
+      </tooltip>
+      <button_text>
+        <locale_1033>RemapFront</locale_1033>
+      </button_text>
+      <script>-_RunPythonScript ("V:\MeshLab\_FieldSurvey\MK\python\pythonTest\Rhino\RemapBasedOnCplane.py")</script>
+    </macro_item>
+    <macro_item guid="33e28e84-0f26-4e23-8168-f88546b508ba" bitmap_id="41876d7d-73b1-40e1-ac58-cad5bd0ce0cc">
+      <text>
+        <locale_1033>Macro 02</locale_1033>
+      </text>
+      <tooltip>
+        <locale_1033>ScaleTarget</locale_1033>
+      </tooltip>
+      <button_text>
+        <locale_1033>ScaleTarget</locale_1033>
+      </button_text>
+      <script>-_RunPythonScript ("V:\MeshLab\_FieldSurvey\MK\python\pythonTest\Rhino\ScaleTargetEightInches.py")</script>
+    </macro_item>
+    <macro_item guid="e05a6b21-0d78-4078-8ab7-a6a2046efad1" bitmap_id="95132179-d4ba-485e-9ff3-087dca3c14e3">
+      <text>
+        <locale_1033>Macro 01</locale_1033>
+      </text>
+      <tooltip>
+        <locale_1033>MoveOrigin</locale_1033>
+      </tooltip>
+      <button_text>
+        <locale_1033>MoveOrigin</locale_1033>
+      </button_text>
+      <script>-_RunPythonScript ("V:\MeshLab\_FieldSurvey\MK\python\pythonTest\Rhino\MoveObjsOrigin.py")</script>
+    </macro_item>
+    <macro_item guid="d2167b2e-6980-4319-bef7-442cd6ed5952" ImportedFromFileGuid="5a2ef1c0-336b-4f75-9402-067ee7bf4356" ImportedFromItemGuid="aefb8d90-9661-41ba-b460-04a5ce1e5c20" bitmap_id="4c395844-9c95-41f7-8cb0-6b6cae724076">
+      <text>
+        <locale_1033>Macro 04</locale_1033>
+      </text>
+      <tooltip>
+        <locale_1033>Hatch_Region</locale_1033>
+      </tooltip>
+      <button_text>
+        <locale_1033>Hatch_Region</locale_1033>
+      </button_text>
+      <script>-_RunPythonScript ("V:\MeshLab\_FieldSurvey\MK\python\pythonTest\Rhino\HatchUI\Hatch_GUI\hatch_region.py")</script>
+    </macro_item>
+    <macro_item guid="11c4a984-7ac2-4086-86f0-1da50a5dbab1" ImportedFromFileGuid="5a2ef1c0-336b-4f75-9402-067ee7bf4356" ImportedFromItemGuid="7c87b61f-2f54-4225-b2b6-9ec2b692a7f4" bitmap_id="5ad1d6dd-44e5-40ba-a9a8-615c0a45e1e1">
+      <text>
+        <locale_1033>Macro 05</locale_1033>
+      </text>
+      <tooltip>
+        <locale_1033>DrawModelPaperspace</locale_1033>
+      </tooltip>
+      <button_text>
+        <locale_1033>DrawModelPaperspace</locale_1033>
+      </button_text>
+      <script>-_RunPythonScript ("V:\MeshLab\_FieldSurvey\MK\python\pythonTest\Rhino\DrawModelPaperspace_v2.py")</script>
+    </macro_item>
+  </macros>
+  <bitmaps>
+    <small_bitmap item_width="16" item_height="16">
+      <bitmap_item guid="36bfb380-66c1-4825-9d23-fd4dd3fe68d9" index="0" />
+      <bitmap_item guid="41876d7d-73b1-40e1-ac58-cad5bd0ce0cc" index="1" />
+      <bitmap_item guid="95132179-d4ba-485e-9ff3-087dca3c14e3" index="2" />
+      <bitmap_item guid="4c395844-9c95-41f7-8cb0-6b6cae724076" index="3" />
+      <bitmap_item guid="5ad1d6dd-44e5-40ba-a9a8-615c0a45e1e1" index="4" />
+      <bitmap>iVBORw0KGgoAAAANSUhEUgAAABAAAABQCAYAAAAQq/UNAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAcSURBVFhH7cGBAAAAAMOg+VNf4QBVAAAAAACX
+GhRQAAHn9VY5AAAAAElFTkSuQmCCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</bitmap>
+    </small_bitmap>
+    <normal_bitmap item_width="24" item_height="24">
+      <bitmap_item guid="36bfb380-66c1-4825-9d23-fd4dd3fe68d9" index="0" />
+      <bitmap_item guid="41876d7d-73b1-40e1-ac58-cad5bd0ce0cc" index="1" />
+      <bitmap_item guid="95132179-d4ba-485e-9ff3-087dca3c14e3" index="2" />
+      <bitmap_item guid="4c395844-9c95-41f7-8cb0-6b6cae724076" index="3" />
+      <bitmap_item guid="5ad1d6dd-44e5-40ba-a9a8-615c0a45e1e1" index="4" />
+      <bitmap>iVBORw0KGgoAAAANSUhEUgAAABgAAAB4CAYAAADogzKiAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAiSURBVGhD7cGBAAAAAMOg+VPf4ARVAAAAAAAA
+AAAAAAAcNS14AAH/Szg0AAAAAElFTkSuQmCCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</bitmap>
+    </normal_bitmap>
+    <large_bitmap item_width="32" item_height="32">
+      <bitmap_item guid="36bfb380-66c1-4825-9d23-fd4dd3fe68d9" index="0" />
+      <bitmap_item guid="41876d7d-73b1-40e1-ac58-cad5bd0ce0cc" index="1" />
+      <bitmap_item guid="95132179-d4ba-485e-9ff3-087dca3c14e3" index="2" />
+      <bitmap_item guid="4c395844-9c95-41f7-8cb0-6b6cae724076" index="3" />
+      <bitmap_item guid="5ad1d6dd-44e5-40ba-a9a8-615c0a45e1e1" index="4" />
+      <bitmap>iVBORw0KGgoAAAANSUhEUgAAACAAAACgCAYAAABtym4sAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAqSURBVHhe7cEBAQAAAIIg/69uSEAAAAAAAAAA
+AAAAAAAAAAAAAAAAwLkaUKAAAd99Ae8AAAAASUVORK5CYIIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</bitmap>
+    </large_bitmap>
+  </bitmaps>
+  <scripts />
+</RhinoUI>
