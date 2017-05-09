@@ -10,6 +10,7 @@ import itertools
 import time
 import datetime
 from functools import wraps
+import re
 
 doc = PhotoScan.app.document
 app = PhotoScan.app
@@ -55,6 +56,7 @@ class AgiChunk:
         self.is_textured = None
         self.is_marked = None
         self.is_obj = None
+        self.is_pdf = None
         self.obj_path = None
         self.is_enough_points = None
         self.initial_point_count = None
@@ -63,6 +65,13 @@ class AgiChunk:
         self.log = None
         self.log_list = []
         self.indent = "\t"*5
+
+    @property
+    def folder(self):
+        path_pic = self.chunk.cameras[0].photo.path
+        pic_name = path_pic.split("/")[-1]
+        folder = path_pic.rstrip(pic_name)
+        return folder
 
     def save_doc(self):
         if self.save is False:
@@ -250,7 +259,7 @@ class AgiChunk:
         else:
             print("Exporting {}...".format(self.name))
             print(self.obj_path)
-            self.chunk.exportModel(self.obj_path)
+            self.chunk.exportModel(self.obj_path, False)
             print("\n")
             self.is_obj = True
             return
@@ -337,7 +346,12 @@ class AgiChunk:
         if self.save is False:
             print("Save is off, skipping export report")
             return
-        else:
+
+        self.check_report()
+        if self.is_pdf is True:
+            print("pdf exists, skipping this export")
+            return
+        if self.is_pdf is None:
             chunk = self.chunk
             path = self.format_file_at_chunk(".pdf", add_timestamp=True)
             if os.path.exists(path):
@@ -523,6 +537,21 @@ class AgiChunk:
             self.is_marked = False
             return
 
+    def check_report(self):
+        # if report .pfd exists in dir, don't make report
+        files = []
+        for (root, dirs, filenames) in os.walk(self.folder):
+            files.extend(filenames)
+        for file in files:
+            if file.endswith(".pdf"):
+                self.is_pdf = True
+                # print("found pdf!")
+                # print(file)
+        if self.is_pdf is None:
+            print("No report in this chunks folder")
+            self.is_pdf = False
+            return
+
     def check_enough_points(self):
         chunk = self.chunk
         min_points = 2000
@@ -537,17 +566,16 @@ class AgiChunk:
         return
     
     def check_obj(self):
-        full_path = self.format_file_at_chunk(".obj")
-
-        if os.path.exists(full_path):
-            print("{} already exists, skipping".format(full_path))
-            self.obj_path = full_path
-            self.is_obj = True
-            return
-        else:
+        files = []
+        for (root, dirs, filenames) in os.walk(self.folder):
+            files.extend(filenames)
+        for file in files:
+            if file.endswith(".obj"):
+                self.is_obj = True
+        if self.is_obj is None:
             print("No obj in this chunks folder")
             self.is_obj = False
-            self.obj_path = full_path
+            self.obj_path = self.format_file_at_chunk(".obj")
             return
 
     def reset_view(self, magnification=80):
@@ -637,8 +665,9 @@ class AgiDoc:
                     pass
                 count += 1
                 agi.run_process()
-            except Exception:
+            except Exception as e:
                 print("Error Here-----------------------------")
+                print(e.with_traceback())
                 continue
 
     def create_log(self):
@@ -694,7 +723,7 @@ def mid_pt(pt_a, pt_b):
 
 
 def main():
-    test = AgiDoc(save=False)
+    test = AgiDoc(save=True)
     test.check_save()
     test.process_all_chunks()
     test.format_log_path()

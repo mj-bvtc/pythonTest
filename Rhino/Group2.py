@@ -2,6 +2,7 @@ import uuid
 import rhinoscriptsyntax as rs
 import Rhino
 import os
+import time
 
 doc = Rhino.RhinoDoc.ActiveDoc
 
@@ -52,8 +53,18 @@ class Project:
         c = ","
         full_path = os.path.join(path,name+ext)
         self.select(full_path)
+    
+    def get_list(self, attribute, name):
+        path = getattr(self, attribute)
+        ext = ".txt"
+        c = ","
+        full_path = os.path.join(path,name+ext)
+        file = open(full_path, "r")
+        csv = [x for x in file][0]
+        ids = csv.split(",")
+        return ids
 
-@redraw_fast
+#@redraw_fast
 def main():
     shelf = Project()
     #shelf.add("part", "AllParts")
@@ -63,9 +74,21 @@ def main():
     #shelf.select(r"C:\Users\mkreidler\Desktop\project\assembly\A.txt")
     #shelf.add("assembly", "H")
     #shelf.select_name("material", "Plywood")
-    shelf.select_name("assembly", "G")
-    shelf.select_name("group", "Top")
-    shelf.select_name("material","Plywood")
+    #shelf.select_name("assembly", "G")
+    #shelf.select_name("group", "Top")
+    #shelf.select_name("material","Plywood")
+    #shelf.select_name("group", "points")
+    """
+    parts = shelf.get_list("part","AllParts")
+    for part in parts:
+        rs.SelectObject(part)
+        rs.ZoomSelected()
+        rs.UnselectAllObjects()
+        time.sleep(.01)
+        Rhino.RhinoApp.Wait()
+    """
+    print "hello\n" *3 
+
 
 if __name__ == "__main__":
     main()
