@@ -66,7 +66,8 @@ class Project:
 
 #@redraw_fast
 def main():
-    shelf = Project()
+    ndome = Project()
+    ndome.add("part", "Blocks")
     #shelf.add("part", "AllParts")
     #shelf.select(r"C:\Users\mkreidler\Desktop\project\part\AllParts.txt")
     #shelf.add("assembly", "B")
@@ -87,7 +88,7 @@ def main():
         time.sleep(.01)
         Rhino.RhinoApp.Wait()
     """
-    print "hello\n" *3 
+
 
 
 if __name__ == "__main__":

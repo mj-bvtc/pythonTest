@@ -73,6 +73,12 @@ class Block:
         else:
             self.dot = rs.AddTextDot(self.data.name, self.point)
 
+    def add_increment_dot(self, style_number, show_instance = False):
+        self.data.style_number = style_number
+        if show_instance is True:            
+            self.dot = rs.AddTextDot("{}{} [{}]".format(self.data.style, self.data.style_number, self.instance), self.point)
+        else:
+            self.dot = rs.AddTextDot("{}{}".format(self.data.style, self.data.style_number), self.point)
 
 class Data:
     instances = {}
@@ -86,6 +92,7 @@ class Data:
         self.priority = None
         self.old_names = {}
         self.notes = None
+        self.orientation = None
 
 
     @property
@@ -114,7 +121,17 @@ def add_blocks(quantity, data):
         obj.get_point()
         obj.assign_data(data)
         obj.add_dot()
-
+    
+    
+def add_increment_blocks(quantity, data, start):
+    objs = [Block() for i in range(quantity)]
+    count = start
+    for obj in objs:
+        obj.get_point()
+        obj.assign_data(data)
+        obj.add_increment_dot(count)
+        count += 1
+        
 # This is a decorator, us @redraw_fast syntax
 def redraw_fast(fn):
     def wrapper(*args, **kwargs):
@@ -153,12 +170,11 @@ class Zone:
 
 def main():
     d = Data()
-    d.style = "P"
-    d.style_number = 16
+    d.style = "RT"
     d.project = "P15-0509"
     d.phase = "Base"
 
-    add_blocks(2, d)
+    add_increment_blocks(16, d,8)
     
     for block in Block.instances:
         block.update()
