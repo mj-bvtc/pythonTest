@@ -8,7 +8,7 @@ def FindOBJs():
     count=0
     ## Find folder for Agi Renders ##
     
-    agiFolder= r"V:\Projects\1400 Woodward- Shinola Hotel\_Field Work Folder Template (Do Not Delete)\Agi-Renders"
+    agiFolder= r"V:\Projects\PS 104K\_Field Work Folder PS104K\Agi-Renders"
     if not agiFolder: return
     
     ## Loop through files ##

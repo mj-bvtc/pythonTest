@@ -3,8 +3,10 @@ import platform
 import datetime
 import RandomColor
 import imp 
+import time
 
-hello = imp.load_source('hello', r"V:\MeshLab\_FieldSurvey\MK\python\pythonTest\Agisoft\hello.py")
+
+#hello = imp.load_source('hello', r"V:\MeshLab\_FieldSurvey\MK\python\pythonTest\Agisoft\hello.py")
 
 
 
@@ -24,11 +26,21 @@ def get_datetime():
 def get_log_stamp():
     return "{} {}".format(get_user_machine(), get_datetime())
 
+def timer(seconds, fn):
+    now = time.time()
+    stop = now + seconds
+    count = 1
+    print "Start: {}".format(datetime.datetime.now().time())
+    while time.time() < stop:
+        fn()
+        count += 1
+    print "Stop: {}".format(datetime.datetime.now().time())
+    print "Count: {}".format(count)
 
 def main():
     print get_log_stamp()
-    print RandomColor.rand_color()
-    print hello.greeting()
+    timer(2, get_log_stamp)
+
 
 
 if __name__ == "__main__":
