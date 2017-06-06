@@ -1,5 +1,6 @@
 import Rhino
 import rhinoscriptsyntax as rs
+import Rhino.Geometry as rg
 
 doc = Rhino.RhinoDoc.ActiveDoc
 
@@ -43,15 +44,15 @@ def transform_objects(objects, xform):
     for obj in objects:
         geo = get_geo(obj)
         geo.Transform(xform)
+        doc.Objects.Add(geo)
         
 def main():
     #selection
-    #objs = rs.GetObjects("Select objects")
-    #print get_types(objs)
-    
-    #breps = [x for x in objs if get_type(x) == Rhino.DocObjects.ObjectType.Brep]
-    #for brep in breps:
-    #    add_faces(brep)
+    objs = rs.GetObjects("Select objects")
+
+    breps = [x for x in objs if get_type(x) == Rhino.DocObjects.ObjectType.Brep]
+    for brep in breps:
+        add_faces(brep)
     
     #get back
     back = rs.GetObject("Select back face")
@@ -76,5 +77,12 @@ def main():
             projected_point.Z - back_centroid.Z)
     line = Rhino.Geometry.Line(back_centroid, projected_vector, 20)
     Rhino.RhinoDoc.ActiveDoc.Objects.AddLine(line)
+    
+    yz = rg.Plane(rg.Point3d.Origin, rg.Vector3d.YAxis, rg.Vector3d.ZAxis)
+    start = rg.Plane(back_centroid, back_vector, projected_vector)
+    remap = rg.Transform.PlaneToPlane(start, yz)
+    
+    transform_objects(objs, remap)
+    doc.Views.Redraw()
 if __name__ == "__main__":
     main()
