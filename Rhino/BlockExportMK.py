@@ -45,44 +45,47 @@ def transform_objects(objects, xform):
         geo = get_geo(obj)
         geo.Transform(xform)
         doc.Objects.Add(geo)
-        
+
 def main():
     #selection
     objs = rs.GetObjects("Select objects")
 
+    #add faces to document
     breps = [x for x in objs if get_type(x) == Rhino.DocObjects.ObjectType.Brep]
     for brep in breps:
         add_faces(brep)
-    
-    #get back
+
+    #get back surface info
     back = rs.GetObject("Select back face")
     back_face = get_face(back)
     back_vector = get_normal(back_face)
     back_centroid = get_centroid(back_face)    
     back_plane = Rhino.Geometry.Plane(back_centroid, back_vector)
 
-    #orientation axis
+    #get orientation surface info
     top = rs.GetObject("Select top face")
     top_face = get_face(top)
     top_vector = get_normal(top_face)
     top_centroid = get_centroid(top_face)
-    result = top_vector.PerpendicularTo(back_vector)
-    #print result
-    #line = Rhino.Geometry.Line(top_centroid, top_vector, 20)
-    #Rhino.RhinoDoc.ActiveDoc.Objects.AddLine(line)
+
+    #project centroid to make new axes perpendicular
     projected_point = back_plane.ClosestPoint(top_centroid)
     projected_vector = Rhino.Geometry.Vector3d(
             projected_point.X - back_centroid.X,
             projected_point.Y - back_centroid.Y,
             projected_point.Z - back_centroid.Z)
-    line = Rhino.Geometry.Line(back_centroid, projected_vector, 20)
+    line = Rhino.Geometry.Line(back_centroid, projected_vector, 20) #line to show you projection result
     Rhino.RhinoDoc.ActiveDoc.Objects.AddLine(line)
-    
+
+    #create transformation
     yz = rg.Plane(rg.Point3d.Origin, rg.Vector3d.YAxis, rg.Vector3d.ZAxis)
     start = rg.Plane(back_centroid, back_vector, projected_vector)
     remap = rg.Transform.PlaneToPlane(start, yz)
-    
+
+    #transform objects and redraw
     transform_objects(objs, remap)
     doc.Views.Redraw()
+
+
 if __name__ == "__main__":
     main()
