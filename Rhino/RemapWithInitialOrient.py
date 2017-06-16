@@ -39,7 +39,10 @@ def main():
     xform = map * scale
     
     
+    
     rs.TransformObject(mesh, xform, False)
+
+    
     
     dim = rg.LinearDimension(end, rg.Point2d.Origin, rg.Point2d(8,0), rg.Point2d(4,15))
     
