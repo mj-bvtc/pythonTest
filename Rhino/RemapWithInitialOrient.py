@@ -32,7 +32,7 @@ def main():
     #secondary fine orientation, scaling etc
     rs.Osnap(False)    
     start, origin, x, y= DynamicPlane.DynamicPlane()
-    
+    map = rg.Transform.PlaneToPlane(start, end)
     factor = 8/origin.DistanceTo(x)
     scale = rg.Transform.Scale(origin, factor)
     
