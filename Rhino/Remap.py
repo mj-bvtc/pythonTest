@@ -29,7 +29,8 @@ def main():
     factor = 8/origin.DistanceTo(x)
     scale = rg.Transform.Scale(origin, factor)
     map = rg.Transform.PlaneToPlane(start, end)
-    xform = scale * map
+    xform = map * scale
+    
     
     rs.TransformObject(mesh, xform, False)
     
