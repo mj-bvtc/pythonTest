@@ -51,6 +51,7 @@ def main():
     Rhino.RhinoDoc.ActiveDoc.Objects.AddLinearDimension(dim)
     
     max_view("Front")
+    rs.ViewCPlane(None, end)
     rs.Redraw()
 
 
