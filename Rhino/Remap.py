@@ -34,7 +34,7 @@ def main():
     
     rs.TransformObject(mesh, xform, False)
     
-    dim = rg.LinearDimension(end, rg.Point2d.Origin, rg.Point2d(8,0), rg.Point2d(4,3))
+    dim = rg.LinearDimension(end, rg.Point2d.Origin, rg.Point2d(8,0), rg.Point2d(4,15))
     
 
     
