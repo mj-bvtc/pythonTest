@@ -15,9 +15,6 @@ def DynamicPlane():
     normal = Rhino.Geometry.Vector3d(x_pt - origin)
     plane = Rhino.Geometry.Plane(origin, normal)
 
-
-
-
     # This is a function that is called whenever the GetPoint's
     # DynamicDraw event occurs
     def DynamicCircle( sender, args ):
@@ -49,6 +46,9 @@ def DynamicPlane():
         cplane = Rhino.Geometry.Plane(origin, x_pt, pt)
         #view = Rhino.RhinoDoc.ActiveDoc.Views.ActiveView
         rs.ViewCPlane(None, cplane)
+
+        return cplane, origin, x_pt, pt
+            
 
 
 if( __name__ == "__main__" ):
