@@ -3,8 +3,7 @@ import random
 import time
 import Rhino
 
-obj = "7cd0c918-89ab-4481-92e7-47553185fd98"
-
+obj = rs.GetObject()
 
 def rand_color():
     r = lambda: random.randint(0,255)
