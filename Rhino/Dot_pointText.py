@@ -10,6 +10,8 @@ for id in dot_guids:
     geo = doc.Objects.Find(id)
     print geo.Geometry.Point
     print geo.Geometry.Text
-    print geo.Geometry.Text.Size
+    print
+    
+
 
 
