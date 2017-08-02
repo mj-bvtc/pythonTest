@@ -4,7 +4,8 @@ import thread, time
 def addCount(count):
     pt = rs.GetPoint("Click to add a count")
     point = rs.AddPoint(pt)
-    rs.AddText(str(count), point)
+    rs.AddText(str(count), point, height=56)
+
 
 def counting(keepCount):
     count = 1
