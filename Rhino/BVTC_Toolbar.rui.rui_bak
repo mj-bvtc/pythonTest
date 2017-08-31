@@ -9,7 +9,7 @@
   </extend_rhino_menus>
   <menus />
   <tool_bar_groups>
-    <tool_bar_group guid="052bc91c-4c75-4778-9252-da149b734ce8" dock_bar_guid32="00000000-0000-0000-0000-000000000000" dock_bar_guid64="fa115e74-186a-4d9f-83ce-a0242f8d3a6d" active_tool_bar_group="c48f9ee0-5310-430e-a191-e1f03cd1b132" single_file="False" hide_single_tab="False" point_floating="356,339">
+    <tool_bar_group guid="052bc91c-4c75-4778-9252-da149b734ce8" dock_bar_guid32="00000000-0000-0000-0000-000000000000" dock_bar_guid64="1d6a32f7-bcd4-4b73-86f4-c7d617f82a96" active_tool_bar_group="c48f9ee0-5310-430e-a191-e1f03cd1b132" single_file="False" hide_single_tab="False" point_floating="356,339">
       <text>
         <locale_1033>BVTC</locale_1033>
       </text>
