@@ -8,7 +8,11 @@ def FindOBJs():
     count=0
     ## Find folder for Agi Renders ##
     
+<<<<<<< HEAD
     agiFolder= r"V:\Projects\Moynihan Station Phase II\Field Work\Agi-Renders"
+=======
+    agiFolder= r"V:\Projects\929 Park Avenue\Field Work\Agi-Renders"
+>>>>>>> 13103316923452d7926a3c467d755cc3ca4f388c
     if not agiFolder: return
     
     ## Loop through files ##
