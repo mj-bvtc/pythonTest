@@ -1,4 +1,4 @@
-`import rhinoscriptsyntax as rs
+import rhinoscriptsyntax as rs
 import Rhino
 import os
 
@@ -8,9 +8,7 @@ def FindOBJs():
     count=0
     ## Find folder for Agi Renders ##
     
-
-    agiFolder= r"V:\Projects\Moynihan Station Phase II\Field Work\Agi-Renders"
-
+    agiFolder=rs.BrowseForFolder( folder = "V:\Projects", message = "Select Agi render parent folder" )
     if not agiFolder: return
     
     ## Loop through files ##

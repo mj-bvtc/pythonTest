@@ -49,10 +49,12 @@ def main():
 
     
     Rhino.RhinoDoc.ActiveDoc.Objects.AddLinearDimension(dim)
-    
+    max_view("Perspective")
+    rs.Command("'_CPlane _World _Top") ##############testing this
     max_view("Front")
     rs.ViewCPlane(None, end)
     rs.Redraw()
+    
 
 
 if __name__ == "__main__":
