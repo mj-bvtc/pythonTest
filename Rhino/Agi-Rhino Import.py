@@ -1,4 +1,4 @@
-`import rhinoscriptsyntax as rs
+import rhinoscriptsyntax as rs
 import Rhino
 import os
 
