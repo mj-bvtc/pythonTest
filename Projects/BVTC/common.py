@@ -14,5 +14,6 @@ def main():
     c = Common()
     print(c.__dict__)
 
+
 if __name__ == "__main__":
     main()
