@@ -55,7 +55,7 @@ class DropName(Common):
 
     def from_shorthand(self, text):
         sections = text.split("-")
-        print(text)
+        # print(text)
         self.drop = "".join(re.findall(r"[a-zA-Z]+", sections[0]))
         self.drop_number = "".join(re.findall(r"[\d]+", sections[0]))
         self.floor = "".join(re.findall(r"[\d]+", sections[1]))
@@ -63,8 +63,9 @@ class DropName(Common):
         self.block = "".join(sections[2:])
         self.style = re.findall(r"[a-zA-Z]+", self.block)[0]
         self.style_number = re.findall(r"[\d]+", self.block)[0]
-        self.orientation = re.findall(r"[a-zA-Z]+",
-                                      sections[2])[1] if len(re.findall(r"[a-zA-Z]+", sections[2])) > 1 else None
+        two = re.findall(r"[a-zA-Z]",
+                                      sections[2])[1] if len(re.findall(r"[a-zA-Z]", sections[2])) > 1 else None
+        self.orientation = re.findall(r"[l]+", two) if two else None  ###TODO fix this problem here
         self.repeat_number = re.findall(r"\((\d+)\)", text)
         self.notes = re.findall(r"[A-Za-z]+",
                                 self.block)[2:] if len(re.findall(r"[A-Za-z]+", self.block)) > 2 else None
@@ -72,17 +73,6 @@ class DropName(Common):
         third = sections[3] if len(sections) > 3 else None
         m = re.findall(r"\d+", third) if third else None
         self.length_number = m[0] if m else None
-        print(self.drop)
-        print(self.drop_number)
-        print(self.floor)
-        print(self.floor_section)
-        print(self.block)
-        print(self.style)
-        print(self.style_number)
-        print(self.orientation)
-        print(self.repeat_number)
-        print(self.notes)
-        print(self.length_number)
 
 
 def main():
@@ -93,9 +83,20 @@ def main():
 
     # for k, v in b.__dict__.items():
     #     print(f"{k}: {v}")
-    d = DropName()
-    d.from_shorthand("W24-51C-BK24R-2(29)_UPPER_SAMPLE")
-    # print(d.__dict__)
+    # d = DropName()
+    # d.from_shorthand("W24-51C-BK24R-2(29)_UPPER_SAMPLE")
+
+    tests = ["W24-51C-BK24R-2(29)_UPPER_SAMPLE",
+             "S12-5-C11",
+             "E2-1C-H2(2)_SAMPLE"]
+
+    for test in tests:
+        d = DropName()
+        d.from_shorthand(test)
+
+        for k, v in d.__dict__.items():
+            print(f"{k}: {v}")
+        print()
 
 
 if __name__ == "__main__":
