@@ -7,7 +7,7 @@ from common import Common
 import re
 import pandas as pd
 import numpy as np
-
+import qr
 
 class BlockName(Common):
     """
@@ -74,6 +74,7 @@ class DropName(Common):
         self.floor_section = None
         self.block = None
         self.shorthand = None
+        self.sample = None
 
     def from_shorthand(self, text):
         self.shorthand = text
@@ -135,19 +136,26 @@ def main():
     # print(name)
 
     tests = ["W24-51C-BK24R-87344(29)_UPPER_SAMPLE",
-            "S12-5-C11",
-            "E2-1C-H2(2)_SAMPLE",
-            "E2-4-G1R-24566_face",
-            "S1-2-E3L-4(5)"]
+             "S12-5-C11",
+             "E2-1C-H2(2)_SAMPLE",
+             "E2-4-G1R-24566_face",
+             "S1-2-E3L-4(5)"]
 
     for test in tests:
         d = DropName()
         d.from_shorthand(test)
-
+        path = r"C:\Users\mkreidler\Desktop\qr_codes\\"
+        data = ""
+        name = str(d.guid)
         for k, v in d.__dict__.items():
             print(f"{k}: {v}")
+            qr.save_qr(data, path, name)
+            data += f"{k}: {v}"
+            data += "\n"
         print()
+        qr.save_qr(data, path, name)
         # print(f"Looking in :'{test}' orientation found: {d.orientation}")
+    print("fin")
 
 
 if __name__ == "__main__":
