@@ -1,3 +1,6 @@
+"""
+BVTC Group object
+"""
 from common import Common
 
 

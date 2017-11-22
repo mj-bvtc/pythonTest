@@ -1,3 +1,7 @@
+"""
+BVTC log tools, important for tracking time of creating, user, and machine
+at point of instantiation.  Timer tool also included.
+"""
 import os
 import platform
 import datetime
