@@ -1,3 +1,6 @@
+"""
+BVTC Block object
+"""
 from common import Common
 
 

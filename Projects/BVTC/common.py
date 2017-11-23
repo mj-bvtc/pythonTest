@@ -1,3 +1,6 @@
+"""
+BVTC common object
+"""
 import uuid
 import log
 

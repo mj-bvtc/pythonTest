@@ -1,3 +1,6 @@
+"""
+BVTC Project object
+"""
 from common import Common
 
 
