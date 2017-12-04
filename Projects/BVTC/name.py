@@ -114,6 +114,7 @@ class DropName(Common):
 def get_full_name(name):
     name = str(name).upper()
     file = r"V:\MeshLab\_Field Survey\MK\Spreadsheets\BLOCK_STYLES.csv"
+    file = r"/home/cole/Documents/BLOCK_STYLES.csv"
     df = pd.DataFrame.from_csv(file).reset_index(drop=False)
     result = df[df['Code'] == name]['Style'].values.tolist()  # changes ndarray to a list
     # print(df.head())
@@ -145,7 +146,7 @@ def main():
     for test in tests:
         d = DropName()
         d.from_shorthand(test)
-        path = r"C:\Users\mkreidler\Desktop\qr_codes\\"
+        path = r"/home/cole/Desktop/qr_codes/"
         data = ""
         name = str(d.guid)
         for k, v in d.__dict__.items():
