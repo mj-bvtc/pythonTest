@@ -9,6 +9,7 @@ import pandas as pd
 import numpy as np
 import qr
 
+
 class BlockName(Common):
     """
     BVTC Block Name/attributes

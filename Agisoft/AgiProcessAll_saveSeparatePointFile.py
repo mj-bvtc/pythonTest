@@ -722,13 +722,18 @@ def mid_pt(pt_a, pt_b):
     return [x, y, z]
 
 
-def main():
+def original_working_main():
     test = AgiDoc(save=True)
     test.check_save()
     test.process_all_chunks()
     test.format_log_path()
     test.create_log()
     PhotoScan.app.messageBox("Script Complete! Hooray!!!")
+
+
+def main():
+    pass
+    # save file, process points only
 
 if __name__ == "__main__":
     main()
