@@ -1,10 +1,3 @@
-from common import Common
+import django
 
-
-class Bird(Common):
-    def __init__(self):
-        super().__init__()
-
-
-b = Bird()
-print(b.time_created)
+print(django.get_version())
