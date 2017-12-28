@@ -6,7 +6,7 @@ from tkinter.filedialog import askopenfilename
 import os
 import datetime
 import math as m
-
+from name import BlockName
 
 class Quote(Common):
     def __init__(self):
@@ -133,12 +133,12 @@ class Quote(Common):
         df = self.df
         # get a list of base styles
         df = df[["Block ID", "# Molds"]]
-        print(df)
+        # print(df)
 
         base_list = list(set(self.df["base"].values))
         base_list.sort()
         # only the lowest numbered hyphenated style gets sum, rest get zero
-        print(base_list)
+        # print(base_list)
 
 
 
@@ -152,8 +152,10 @@ class Quote(Common):
 
 
 def main():
-    q = Quote()
-    q.run()
+    # q = Quote()
+    bn = BlockName()
+    bn.get_length_number("W1-1")
+    print(bn.length_number)
 
 
 
