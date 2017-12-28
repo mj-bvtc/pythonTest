@@ -77,7 +77,6 @@ class DropName(Common):
         self.shorthand = None
         self.sample = None
 
-
     def from_shorthand(self, text):
         self.shorthand = text
         sections = text.split("-")
@@ -96,6 +95,13 @@ class DropName(Common):
             # print(f"This is what I'm looking for: {ln}")
             self.length_number = ln
         """
+        def get_length_number(_text):
+            pattern = r"-(\d+)"
+            result = re.findall(pattern, _text)
+            if result:
+                return result[0]
+            else:
+                return None
 
         self.length_number = get_length_number(text)
         if len(sections) >= 3:

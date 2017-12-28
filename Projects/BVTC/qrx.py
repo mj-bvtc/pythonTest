@@ -3,10 +3,9 @@ from common import Common
 import re
 import tkinter
 from tkinter.filedialog import askopenfilename
-import os
-import datetime
 import math as m
-from name import BlockName
+import name_tools
+
 
 class Quote(Common):
     def __init__(self):
@@ -130,18 +129,28 @@ class Quote(Common):
         # print(sums)
 
     def remove_duplicate_molds(self):
-        df = self.df
+        df = self.df.copy()
         # get a list of base styles
-        df = df[["Block ID", "# Molds"]]
-        # print(df)
+        df = df[["Block ID", "# Molds", "base"]]
 
-        base_list = list(set(self.df["base"].values))
-        base_list.sort()
+        def fx(text):
+            b = name_tools.Block(text)
+            return b.length_number
+        df["len_num"] = df["Block ID"].apply(fx)
+        print(df)
+        # base_list = list(set(self.df["base"].values))
+        # base_list.sort()
         # only the lowest numbered hyphenated style gets sum, rest get zero
         # print(base_list)
 
-
-
+    @staticmethod
+    def get_length_number(_text):
+        pattern = r"-(\d+)"
+        result = re.findall(pattern, _text)
+        if result:
+            return result[0]
+        else:
+            return None
 
     def run(self):
         self.add_dwgs
@@ -152,13 +161,9 @@ class Quote(Common):
 
 
 def main():
-    # q = Quote()
-    bn = BlockName()
-    bn.from_shorthand("W1-1")
-    print(bn.length_number)
-
+    q = Quote()
+    q.run()
 
 
 if __name__ == "__main__":
     main()
-
