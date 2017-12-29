@@ -88,11 +88,22 @@ class DropName(Common):
         self.block = "".join(sections[2:])
         self.style = get_full_name(re.findall(r"[a-zA-Z]+", self.block)[0])
         self.style_number = re.findall(r"[\d]+", self.block)[0]
+        """
         if len(sections) > 3:
             three = sections[3]
             ln = re.findall(r"^\d+", three)[0]
             # print(f"This is what I'm looking for: {ln}")
             self.length_number = ln
+        """
+        def get_length_number(_text):
+            pattern = r"-(\d+)"
+            result = re.findall(pattern, _text)
+            if result:
+                return result[0]
+            else:
+                return None
+
+        self.length_number = get_length_number(text)
         if len(sections) >= 3:
             # print(f"Section two: {sections[2]}")
             two = sections[2]
@@ -108,7 +119,7 @@ class DropName(Common):
         # print(len(sections))
         third = sections[3] if len(sections) > 3 else None
         m = re.findall(r"\d+", third) if third else None
-        self.length_number = m[0] if m else None
+        # self.length_number = m[0] if m else None
 
 
 def get_full_name(name):
@@ -124,6 +135,7 @@ def get_full_name(name):
 
 
 def main():
+    pass
     # tests = ["H1234", "H266R", "BK5", "C21L-15(2234)_SAMPLE_UPPER"]
     # b = BlockName()
 
@@ -136,7 +148,7 @@ def main():
 
     # name = get_full_name("AS")
     # print(name)
-
+"""
     tests = ["W24-51C-BK24R-87344(29)_UPPER_SAMPLE",
              "S12-5-C11",
              "E2-1C-H2(2)_SAMPLE",
@@ -158,7 +170,7 @@ def main():
         qr.save_qr(data, path, name)
         # print(f"Looking in :'{test}' orientation found: {d.orientation}")
     print("fin")
-
+"""
 
 if __name__ == "__main__":
     main()
