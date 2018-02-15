@@ -58,18 +58,53 @@ def avg_mortar(header_list, assembly):
 mortar = avg_mortar(heads, head_assembly)
 
 
+def build_head(head, height, x=0, y=0, z=0):
+    x,y,z = 0,0,0
+    
+    pt1 = Rhino.Geometry.Point3d(x,y,z)
+    pt2 = Rhino.Geometry.Point3d(x,y+height,z)
+    pt3 = Rhino.Geometry.Point3d(x+head.top,y+height,z)
+    pt4 = Rhino.Geometry.Point3d(x+head.bottom,y,z)
+    
+    pts = [pt1, pt2, pt3, pt4]
+    
+    for pt in pts:
+        rs.AddPoint(pt)
+    return pt3, pt4
+for head in heads:
+    
+    build_head(head, 13)
+    
+
 def build_header(ordered_head_list=None, assembly_length=None):
     #cut down list, keep one more than half
     count = ordered_head_list
-    keep_num = (count//2) + 1
-    keepers = ordered_head_list[0:keep_num]
-    
-    #identify keystone
-    key = keepers[-1]
     
     
     #start adding points
     origin = Rhino.Geometry.Point3d.Origin
     
     
-build_header()
+#build_header()
+
+
+def build_head_2(head, height, offset, top_start, bot_start):
+    tx,ty,tz = top_start
+    bs,by,bz = bot_start
+    
+    top_end = tx + head.top, ty, tz
+    bot_end = bs + head.bottom, by, bz
+    
+    pts = [top_start, bot_start, top_end, bot_end]
+    
+    for pt in pts:
+        rs.AddPoint(pt)
+
+x, y, z = 0,0,0
+
+height = 13
+
+bs = Rhino.Geometry.Point3d(x,y,z)
+ts = Rhino.Geometry.Point3d(x,y+height, z) 
+
+build_head_2(H1L, height, .5, ts, bs)
