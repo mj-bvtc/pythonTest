@@ -112,7 +112,8 @@ def format_file(ext, chunk):
 
 def main():
     check_save()
-    align_all()
+    process_all()
+    duplicate_all()
 
 
 if __name__ == "__main__":
