@@ -1,5 +1,3 @@
-
- 
 import DynamicPlane
 import Rhino
 import rhinoscriptsyntax as rs
