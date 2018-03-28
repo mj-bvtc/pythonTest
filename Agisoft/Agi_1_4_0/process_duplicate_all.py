@@ -40,7 +40,7 @@ def align_all():
 def duplicate(chunk):
     name = chunk.label
     new = chunk.copy()
-    new.label = "3D_PDF_{}".format(name)
+    new.label = "{}_3D-PDF".format(name)
 
 
 def duplicate_all(export=True):
@@ -48,23 +48,24 @@ def duplicate_all(export=True):
 
         # Max
         name = chunk.label
-        chunk.label = "Max_{}".format(name)
+        chunk.label = "{}_8-Mill".format(name)
+        chunk.decimateModel(8000000)
 
         # Rhino
         rhino = chunk.copy()
-        rhino.label = "Rhino_{}".format(name)
+        rhino.label = "{}_Rhino".format(name)
         rhino.decimateModel(1500000)
         rhino.buildUV(mapping=PhotoScan.GenericMapping)
         rhino.buildTexture(blending=PhotoScan.MosaicBlending,
                            size=4096)
         if export is True:
-            ext = ".wrl"
+            ext = ".obj"
             file = format_file(ext, rhino)
             rhino.exportModel(file)
 
         # PDF
         pdf = chunk.copy()
-        pdf.label = "3D_PDF_{}".format(name)
+        pdf.label = "{}_3D-PDF".format(name)
         pdf.decimateModel(100000)
         pdf.buildUV(mapping=PhotoScan.GenericMapping)
         pdf.buildTexture(blending=PhotoScan.MosaicBlending,
@@ -83,9 +84,9 @@ def process(chunk):
     chunk.buildModel(surface=PhotoScan.Arbitrary,
                      interpolation=PhotoScan.EnabledInterpolation,
                      face_count=0)
-    chunk.buildUV(mapping=PhotoScan.GenericMapping)
-    chunk.buildTexture(blending=PhotoScan.MosaicBlending,
-                       size=4096)
+    #chunk.buildUV(mapping=PhotoScan.GenericMapping)
+    #chunk.buildTexture(blending=PhotoScan.MosaicBlending,
+                       #size=4096)
     doc.save()
 
 
@@ -112,6 +113,7 @@ def format_file(ext, chunk):
 
 def main():
     check_save()
+    align_all()
     process_all()
     duplicate_all()
 
