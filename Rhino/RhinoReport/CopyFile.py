@@ -46,8 +46,25 @@ def get_path(_title=None, default_dir=r"V:\Sample Data"):
     return path
 
 
+def get_latest_image(dirpath, valid_extensions=('jpg','jpeg','png')):
+    """
+    Get the latest image file in the given directory
+    """
+
+    # get filepaths of all files and dirs in the given dir
+    valid_files = [os.path.join(dirpath, filename) for filename in os.listdir(dirpath)]
+    # filter out directories, no-extension, and wrong extension files
+    valid_files = [f for f in valid_files if '.' in f and \
+        f.rsplit('.',1)[-1] in valid_extensions and os.path.isfile(f)]
+
+    if not valid_files:
+        raise ValueError("No valid images in %s" % dirpath)
+
+    return max(valid_files, key=os.path.getmtime)
+
+
 def find_files(extensions, path):
-    files = []
+    files = set()
     dirs = set()
 
     for dirpath, dirnames, filenames in os.walk(path):
@@ -55,9 +72,11 @@ def find_files(extensions, path):
             ext = filename.split(".")[-1]
             if ext in extensions:
                 full_path = os.path.join(dirpath, filename)
-                files.append(full_path)
+                files.add(full_path)
+                pic = get_latest_image(dirpath)
+                files.add(pic)
                 # print(f"Added {full_path} to list")
-    return files
+    return list(files)
 
 
 def copy_files(src, dst, files, report=None):

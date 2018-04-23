@@ -48,8 +48,8 @@ def duplicate_all(export=True):
 
         # Max
         name = chunk.label
-        chunk.label = "{}_8-Mill".format(name)
-        chunk.decimateModel(8000000)
+        #chunk.label = "{}_8-Mill".format(name)
+        #chunk.decimateModel(8000000)
 
         # Rhino
         rhino = chunk.copy()
@@ -112,9 +112,9 @@ def format_file(ext, chunk):
 
 
 def main():
-    check_save()
+    #check_save()
     #align_all()
-    process_all()
+    #process_all()
     duplicate_all()
 
 
