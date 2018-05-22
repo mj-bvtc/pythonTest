@@ -46,6 +46,9 @@ def duplicate(chunk):
 def duplicate_all(export=True):
     for chunk in doc.chunks:
 
+        # process chunk
+        process(chunk)
+
         # Max
         name = chunk.label
         chunk.label = "{}_8-Mill".format(name)
@@ -114,7 +117,7 @@ def format_file(ext, chunk):
 def main():
     check_save()
     #align_all()
-    process_all()
+    #process_all()
     duplicate_all()
 
 
