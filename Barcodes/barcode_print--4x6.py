@@ -7,6 +7,7 @@ import win32print
 import datetime
 import socket
 import getpass
+import time
 
 
 def get_user_host():
@@ -46,71 +47,86 @@ def make_pdf(code=None, path=None):
 
     c.setPageSize((576, 384))  # 4x6 in pixels
 
-    #make labels
+    # ----make labels----
 
-
-    #project: ***THIS NEEDS TO BE PROGRAMMED
+    # project: ***THIS NEEDS TO BE PROGRAMMED
+    project = "Moynihan Station Phase III"
+    p_num = "P18-1234"
+    proj = f"{p_num},  {project}"
     c.drawString(33, 282, "PROJECT:")
     c.setFont("Helvetica", 9)
-    c.drawString(33, 268, "Moynihan Station Phase III")
+    c.drawString(33, 268, proj)
 
-    #date received: ****this needs to be input somehow
+    # date received: ****this needs to be input somehow
     c.setFont("Helvetica-Bold", 9)
     c.drawString(33, 246, "DATE RECEIVED:")
     c.setFont("Helvetica", 9)
     c.drawString(33, 232, str(dt))
 
-    #date printed:
+    # date printed:
     c.setFont("Helvetica-Bold", 9)
     c.drawString(33, 209, "DATE PRINTED:")
     c.setFont("Helvetica", 9)
     c.drawString(33, 198, str(dt))
 
-    #guid:
+    # guid:
     c.setFont("Helvetica-Bold", 9)
     c.drawString(33, 174, "GUID:")
     c.setFont("Helvetica", 9)
     c.drawString(33, 162, str(code))
 
-    #LOCATION: ***PROGRAM THIS
+    # LOCATION: ***PROGRAM THIS
     c.setFont("Helvetica-Bold", 9)
     c.drawString(33, 140, "LOCATION:")
     c.setFont("Helvetica", 9)
     c.drawString(33, 128, "E25-14A-BK49R-COLOR")
 
-    #quantity ***HAND INPUT AT THE MOMENT
+    # quantity ***HAND INPUT AT THE MOMENT
     c.setFont("Helvetica-Bold", 9)
     c.drawString(33, 107, "QUANTITY:")
     c.setFont("Helvetica", 9)
     c.drawString(33, 95, "256")
 
-    #BLOCK ID ***HAND INPUT
+    # NUMBERS
+    c.setFont("Helvetica-Bold", 9)
+    c.drawString(33, 107, "QUANTITY:")
+    c.drawString(96, 107, "INSTANCE:")
+    c.drawString(160, 107, "CRATE:")
+    c.drawString(215, 107, "PALLET:")
+    c.setFont("Helvetica", 9)
+    c.drawString(33, 95, "256")
+    c.drawString(96, 95, "14")
+    c.drawString(160, 95, "6")
+    c.drawString(215, 95, "3")
+
+    # BLOCK ID ***HAND INPUT
     c.setFont("Helvetica-Bold", 9)
     c.drawString(33, 75, "BLOCK ID:")
 
     c.setFont("Helvetica", 40)
     c.drawString(31, 37, "BK49R")
 
-#######drawing#######
-    #draw the QR code
+# -------drawing---------
+    # draw the QR code
     c.drawInlineImage(img_path, 300, 7, width=274, height=281)
 
-    #draw the logo
+    # draw the logo
     c.drawInlineImage(r"C:\Users\mkreidler\Desktop\BVTC-Logo-BLACK-horizontal.jpg",
                       285, 300, width=274, height=66)
 
-
-
-    ####rectangles
+    # rectangles
     from reportlab.lib.units import inch
     c.setStrokeColorRGB(0, 0, 0)
     c.rect(33, 332, .105*inch, .105*inch, stroke=1, fill=0)
     c.rect(185, 332, .105 * inch, .105 * inch, stroke=1, fill=0)
+    c.rect(33, 310, .105*inch, .105*inch, stroke=1, fill=0)
+    c.rect(185, 310, .105 * inch, .105 * inch, stroke=1, fill=0)
     c.setFont("Helvetica", 9.7)
     c.drawString(44, 332.213, "LOGGED IN")
     c.drawString(196, 332.213, "SCANNED")
+    c.drawString(44, 310, "TO BE RETURNED")
+    c.drawString(196, 310, "COLOR SAMPLE")
     c.save()
-
 
     # delete .jpeg
     os.remove(img_path)
@@ -135,13 +151,12 @@ def print_file(filename):
 
 def print_label():
     file = make_pdf()
-    #print_file(file)
+    # print_file(file)
 
-import time
 
 def print_labels(num=1):
     for i in range(num):
-        #print_label()
+        # print_label()
         print(f"Printed {i}")
         time.sleep(5)
 
