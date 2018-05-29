@@ -36,7 +36,9 @@ def make_pdf(code=None, path=None):
 
     # draw QR
     qr = qrcode.QRCode()
-    qr.add_data(code)
+    pnum = "P12-3456"
+    qr_data = f"{pnum}_{code}"
+    qr.add_data(qr_data)
     img = qr.make_image().save(img_path)
 
     # draw pdf
@@ -79,7 +81,14 @@ def make_pdf(code=None, path=None):
     c.setFont("Helvetica-Bold", 9)
     c.drawString(33, 140, "LOCATION:")
     c.setFont("Helvetica", 9)
-    c.drawString(33, 128, "E25-14A-BK49R-COLOR")
+    # c.drawString(33, 128, "E25-14A-BK49R-COLOR")
+    c.drawString(33, 128, "----")
+
+    # Sample ID: ***PROGRAM THIS
+    c.setFont("Helvetica-Bold", 9)
+    c.drawString(215, 140, "SAMPLE ID:")
+    c.setFont("Helvetica", 9)
+    c.drawString(215, 128, "23")
 
     # quantity ***HAND INPUT AT THE MOMENT
     c.setFont("Helvetica-Bold", 9)

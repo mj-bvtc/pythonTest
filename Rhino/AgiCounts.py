@@ -71,7 +71,10 @@ class Block:
 
 
 def main():
-
+    
+    c = Count()
+    c.add_count()
+"""
     color = rs.GetColor()
     objs = [Count(color) for i in range(3)]
     for obj in objs:
@@ -80,7 +83,7 @@ def main():
     
     print d.__dict__
     
-
+"""
 
 
 
