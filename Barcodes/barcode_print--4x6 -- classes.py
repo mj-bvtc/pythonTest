@@ -51,6 +51,11 @@ class Barcode(Common):
         self.scanned_in = None
         self.block_id = None
 
+
+    def create_id(self):
+        code = uuid.uuid4()
+        return code
+
     def get_data(self):
         pass
 
