@@ -10,6 +10,8 @@ import getpass
 import time
 import tkinter as tk
 from tkinter.filedialog import askdirectory
+from tkinter.filedialog import asksaveasfile
+import pandas as pd
 
 
 class Common:
@@ -57,6 +59,12 @@ class Barcode(Common):
         self.qr = None
         self.img_path = None
         self.path_base = None
+        self.df = None
+        self.estimating_block_id = None
+        self.estimating_description = None
+        self.number_shop_dwg = None
+        self.forming_method = None
+        self.quote = None
 
     def get_folder(self):
         dial = tk.Tk()
@@ -225,10 +233,67 @@ class Barcode(Common):
         pass
 
 
-def main():
+class Quote(Common):
+    def __init__(self):
+        super().__init__()
+        self.path = None
+        self.quote = None
+        self.blocks = []
+        self.barcodes = []
+        self.quote_to_pandas()
+        self.report_path = None
+        self.report_data = None
 
+    def quote_to_pandas(self, path=r"C:\Users\mkreidler\Desktop\Shell_House.xlsx"):
+        df = pd.read_excel(path)
+        df = df[["Block ID", "Description", "No. of Shop Dwgs.", "Form Method", "Qty of Units"]]
+        df.rename(columns={"Block ID": "estimating_id",
+                           "Description": "block_description",
+                           "No. of Shop Dwgs.": "number_shops",
+                           "Form Method": "form_method",
+                           "Qty of Units": "block_quantity"}, inplace=True)
+
+        # recreate df to contain only rows without section totals
+        df = df[df.block_description.str.strip() != "Section Totals"]
+        self.quote = df
+        return df
+
+    def make_barcodes(self):
+        for i in range(len(self.quote)):
+            b = Barcode()
+            row = self.quote.iloc[[i]]
+            b.estimating_description = row.block_description.values[0]
+            b.quantity = row.block_quantity.values[0]
+            b.estimating_block_id = row.estimating_id.values[0]
+            b.forming_method = row.form_method.values[0]
+            b.number_shop_dwg = row.number_shops.values[0]
+
+            self.barcodes.append(b)
+
+    def create_block_report(self):
+        df = pd.DataFrame([vars(x) for x in self.barcodes])
+        return df
+
+    def save_block_report(self):
+        dial = tk.Tk()
+        dial.withdraw()
+        target = asksaveasfile(defaultextension=".xlsx")
+
+        if target.name is None:
+            return
+        df = pd.DataFrame([vars(x) for x in self.barcodes])
+
+        df.to_excel(target.name)
+        self.report_path = target.name
+        self.report_data = df
+        print(f"Saved barcode report here: {target.name}")
+
+
+def test_barcode():
     # instantiate barcode class
     bc = Barcode()
+    dd = Barcode()
+    group = [bc, dd]
 
     # input data values
     bc.project_number = "P12-3456"
@@ -239,10 +304,12 @@ def main():
     bc.color_sample = True
 
     # choose a folder to save in
-    bc.get_folder()
+    # bc.get_folder()                                               # this is a dialog box based folder search
+    bc.folder = r"C:\Users\mkreidler\Desktop\New pdf exports"       # hard coded in for convenience
 
     # get sample id from user
-    bc.get_sample_name()
+    # bc.get_sample_name()                                          # user input
+    bc.sample_id = str(123)                                              # hard coded in for convenience
 
     # draw QR
     bc.draw_qr()
@@ -251,7 +318,27 @@ def main():
     bc.build_sticker()
 
     # physically print sticker
-    bc.print_sticker()
+    # bc.print_sticker()
+
+    # record data in database/spreadsheet
+    df = pd.DataFrame([vars(f) for f in group])
+    timestamp = str(datetime.datetime.now()).replace(":", "_")
+    name = f"Report_{timestamp}.csv"
+
+    root = r"C:\Users\mkreidler\Desktop\New pdf exports"
+    rpt = f"{root}\\{name}"
+    df.to_csv(rpt)
+
+
+def test_quote():
+    qt = Quote()
+    qt.make_barcodes()
+    qt.create_block_report()
+    qt.save_block_report()
+
+
+def main():
+    test_quote()
 
 
 if __name__ == "__main__":
