@@ -157,7 +157,7 @@ class Barcode(Common):
         c.setFont("Helvetica-Bold", 9)
         c.drawString(215, 140, "SAMPLE ID:")
         c.setFont("Helvetica", 9)
-        c.drawString(215, 128, self.sample_id)
+        c.drawString(215, 128, str(self.sample_id))
 
         # quantity
         c.setFont("Helvetica-Bold", 9)
@@ -180,7 +180,7 @@ class Barcode(Common):
         c.drawString(33, 75, "BLOCK ID:")
 
         c.setFont("Helvetica", 40)
-        c.drawString(31, 37, "BK49R")
+        c.drawString(31, 37, str(self.block_id))
 
         # -------drawing---------
         # draw the QR code
@@ -264,7 +264,7 @@ class Quote(Common):
             row = self.quote.iloc[[i]]
             b.estimating_description = row.block_description.values[0]
             b.quantity = row.block_quantity.values[0]
-            b.estimating_block_id = row.estimating_id.values[0]
+            b.block_id = row.estimating_id.values[0]                    # this should be b.estimating id
             b.forming_method = row.form_method.values[0]
             b.number_shop_dwg = row.number_shops.values[0]
 
@@ -287,6 +287,26 @@ class Quote(Common):
         self.report_path = target.name
         self.report_data = df
         print(f"Saved barcode report here: {target.name}")
+
+    def print_beginning(self, num):
+        for i in range(num):
+            bc = self.barcodes[i]
+
+            bc.project_number = "P12-3456"
+            bc.location = "-----"
+            bc.dt_received = datetime.datetime(2018, 3, 12)
+            bc.project_name = "451 Broome"
+            bc.color_sample = True
+
+            bc.folder = r"C:\Users\mkreidler\Desktop\New pdf exports"
+
+            bc.draw_qr()
+
+            bc.build_sticker()
+
+            bc.print_sticker()
+
+            time.sleep(5)
 
 
 def test_barcode():
@@ -337,8 +357,15 @@ def test_quote():
     qt.save_block_report()
 
 
+def test_print_barcode_from_quote():
+    qt = Quote()
+    qt.make_barcodes()
+    qt.create_block_report()
+    qt.print_beginning(3)
+
+
 def main():
-    test_quote()
+    test_print_barcode_from_quote()
 
 
 if __name__ == "__main__":
