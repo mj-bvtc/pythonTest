@@ -288,7 +288,7 @@ class Quote(Common):
         self.report_data = df
         print(f"Saved barcode report here: {target.name}")
 
-    def print_beginning(self, num):
+    def print_beginning(self, num, _print=False):
         for i in range(num):
             bc = self.barcodes[i]
 
@@ -298,15 +298,19 @@ class Quote(Common):
             bc.project_name = "451 Broome"
             bc.color_sample = True
 
-            bc.folder = r"C:\Users\mkreidler\Desktop\New pdf exports"
+            bc.folder = r"C:\Users\mkreidler\Desktop\test"
 
             bc.draw_qr()
 
             bc.build_sticker()
 
-            bc.print_sticker()
+            if print is not False:
+                bc.print_sticker()
+                time.sleep(5)
 
-            time.sleep(5)
+    def print_all(self):
+        num = len(self.barcodes)
+        self.print_beginning(num)
 
 
 def test_barcode():
@@ -345,7 +349,7 @@ def test_barcode():
     timestamp = str(datetime.datetime.now()).replace(":", "_")
     name = f"Report_{timestamp}.csv"
 
-    root = r"C:\Users\mkreidler\Desktop\New pdf exports"
+    root = r"C:\Users\mkreidler\Desktop\test"
     rpt = f"{root}\\{name}"
     df.to_csv(rpt)
 
@@ -361,7 +365,7 @@ def test_print_barcode_from_quote():
     qt = Quote()
     qt.make_barcodes()
     qt.create_block_report()
-    qt.print_beginning(3)
+    qt.print_beginning(3, _print=True)
 
 
 def main():

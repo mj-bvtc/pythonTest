@@ -61,7 +61,6 @@ class Zone(Common):
         self.name = None
         self.curve = None
         self.type = None   # ex. 'floor', 'drop', 'region', 'elevation', 'area'
-    
 
 class Block(Common):
     def __init__(self):
