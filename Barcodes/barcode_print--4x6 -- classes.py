@@ -10,6 +10,65 @@ import getpass
 import time
 
 
+class Common:
+    def __init__(self):
+        self.datetime_created = datetime.datetime.now()
+        self.id = uuid.uuid4()
+        self.hostname = socket.gethostname()
+        self.username = getpass.getuser()
+
+    @property
+    def user_at_host(self):
+        return f"{self.username}@{self.hostname}"
+
+
+class Barcode(Common):
+    """
+    BVTC QR code sticker for Sample/Survey
+
+    -mjk
+    """
+
+    def __init__(self):
+        super().__init__()
+        self.project_name = None
+        self.project_number = None                      # required
+        self.dt_received = None
+        self.dt_printed = datetime.datetime.now()
+        self.location = None
+        self.quantity = None
+        self.instance = None
+        self.crate = None
+        self.pallet = None
+        self.block_style = None
+        self.style_instance = None
+        self.orientation = None
+        self.notes = None
+        self.sample_id = None
+        self.color_sample = None
+        self.logged_in = None
+        self.to_be_returned = None
+        self.scanned_in = None
+        self.block_id = None
+
+
+    def create_id(self):
+        code = uuid.uuid4()
+        return code
+
+    def get_data(self):
+        pass
+
+    def build_sticker(self):
+        pass
+
+    def print_sticker(self):
+        pass
+
+    def print_sticker_list(self, sticker_list):
+        pass
+
+
 def get_user_host():
     hostname = socket.gethostname()
     username = getpass.getuser()
@@ -130,11 +189,13 @@ def make_pdf(code=None, path=None):
     c.rect(185, 332, .105 * inch, .105 * inch, stroke=1, fill=0)
     c.rect(33, 310, .105*inch, .105*inch, stroke=1, fill=0)
     c.rect(185, 310, .105 * inch, .105 * inch, stroke=1, fill=0)
+    c.rect(185, 288, .105 * inch, .105 * inch, stroke=1, fill=0)        # DIGITAL SCULPTURE CHECKBOX
     c.setFont("Helvetica", 9.7)
     c.drawString(44, 332.213, "LOGGED IN")
     c.drawString(196, 332.213, "SCANNED")
     c.drawString(44, 310, "TO BE RETURNED")
     c.drawString(196, 310, "COLOR SAMPLE")
+    c.drawString(196, 288, "DIGITAL SCULPTURE")
     c.save()
 
     # delete .jpeg
@@ -160,26 +221,14 @@ def print_file(filename):
 
 def print_label():
     file = make_pdf()
-    # print_file(file)
+    print_file(file)
 
 
-def print_labels(num=1):
+def print_labels(num=1, pause=0):
     for i in range(num):
-        # print_label()
-        print(f"Printed {i}")
-        time.sleep(5)
-
-
-class Common:
-    def __init__(self):
-        self.datetime_created = datetime.datetime.now()
-        self.id = uuid.uuid4()
-        self.hostname = socket.gethostname()
-        self.username = getpass.getuser()
-
-    @property
-    def user_at_host(self):
-        return f"{self.username}@{self.hostname}"
+        print_label()
+        print(f"Printed {i+1}")
+        time.sleep(pause)
 
 
 class QR(Common):
@@ -212,7 +261,7 @@ def program():
 
 
 def main():
-    make_pdf()
+    print_labels(num=3, pause=5)
 
 
 if __name__ == "__main__":
