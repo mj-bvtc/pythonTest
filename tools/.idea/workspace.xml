@@ -11,25 +11,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="photo_sorting.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/photo_sorting.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="669">
-              <caret line="158" column="11" lean-forward="false" selection-start-line="158" selection-start-column="11" selection-end-line="158" selection-end-column="11" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#190#590#0" expanded="false" />
-                <element signature="e#617#977#0" expanded="false" />
-                <element signature="e#1010#1093#0" expanded="false" />
-                <element signature="e#1124#1357#0" expanded="false" />
-                <element signature="e#1389#2623#0" expanded="false" />
-                <element signature="e#2654#2909#0" expanded="false" />
-                <element signature="e#2949#3475#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="scratch.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scratch.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -40,35 +21,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="process_duplicate_all---no-align.py" pinned="false" current-in-tab="false">
-        <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/Agisoft/Agi_1_4_0/process_duplicate_all---no-align.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1581">
-              <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#16#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Raspi_Kilns.py" pinned="false" current-in-tab="false">
-        <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/RaspPiKilns/Raspi_Kilns.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="22" column="34" lean-forward="false" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CopyFile.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CopyFile.py" pinned="false" current-in-tab="true">
         <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/Rhino/RhinoReport/CopyFile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+            <state relative-caret-position="227">
+              <caret line="107" column="11" lean-forward="false" selection-start-line="107" selection-start-column="11" selection-end-line="107" selection-end-column="11" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -79,44 +36,48 @@
       <file leaf-file-name="SampleReportGenerator.py" pinned="false" current-in-tab="false">
         <entry file="file://V:/Sample Data/_Meta/SampleReportGenerator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CopyFile.py" pinned="false" current-in-tab="false">
-        <entry file="file://V:/Sample Data/_Meta/CopyFile.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="barcode_print.py" pinned="false" current-in-tab="false">
-        <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/Barcodes/barcode_print.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="667">
-              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-              <caret line="42" column="31" lean-forward="false" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
-              <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+            <state relative-caret-position="782">
+              <caret line="52" column="24" lean-forward="false" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="barcode_print--4x6.py" pinned="false" current-in-tab="true">
-        <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/Barcodes/barcode_print--4x6.py">
+      <file leaf-file-name="RhinoReport.py" pinned="false" current-in-tab="false">
+        <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/Rhino/RhinoReport/RhinoReport.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="102" column="0" lean-forward="true" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+            <state relative-caret-position="1258">
+              <caret line="79" column="11" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="81" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="barcode_print--4x6 -- classes 2018-06-19.py" pinned="false" current-in-tab="false">
+        <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/Barcodes/barcode_print--4x6 -- classes 2018-06-19.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3961">
+              <caret line="367" column="38" lean-forward="false" selection-start-line="367" selection-start-column="38" selection-end-line="367" selection-end-column="38" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#313#599#0" expanded="false" />
+                <element signature="e#727#1721#0" expanded="false" />
+                <element signature="e#1757#1919#0" expanded="false" />
+                <element signature="e#1956#1960#0" expanded="false" />
+                <element signature="e#2001#2123#0" expanded="false" />
+                <element signature="e#2172#2206#0" expanded="false" />
+                <element signature="e#2240#2244#0" expanded="false" />
+                <element signature="e#2277#2726#0" expanded="false" />
+                <element signature="e#6877#6881#0" expanded="false" />
+                <element signature="e#7247#7863#0" expanded="false" />
+                <element signature="e#8427#8496#0" expanded="false" />
+                <element signature="e#8539#8908#0" expanded="false" />
+                <element signature="e#9577#10769#0" expanded="false" />
+                <element signature="e#10794#10885#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -135,6 +96,17 @@
     <findStrings>
       <find>get_latest</find>
       <find>find_files</find>
+      <find>guid</find>
+      <find>created</find>
+      <find>built</find>
+      <find>pdf_path</find>
+      <find>delet</find>
+      <find>block</find>
+      <find>block_id</find>
+      <find>quantity</find>
+      <find>expo</find>
+      <find>build</find>
+      <find>GET_PATH</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -143,8 +115,11 @@
         <option value="V:/MeshLab/_Field Survey/MK/python/pythonTest/Agisoft/Agi_1_4_0/process_duplicate_all.py" />
         <option value="$PROJECT_DIR$/photo_sorting.py" />
         <option value="$PROJECT_DIR$/scratch.py" />
-        <option value="V:/MeshLab/_Field Survey/MK/python/pythonTest/Rhino/RhinoReport/CopyFile.py" />
+        <option value="V:/MeshLab/_Field Survey/MK/python/pythonTest/Barcodes/scratch 2.py" />
         <option value="V:/MeshLab/_Field Survey/MK/python/pythonTest/Barcodes/barcode_print--4x6.py" />
+        <option value="V:/MeshLab/_Field Survey/MK/python/pythonTest/Barcodes/barcode_print--4x6 -- classes.py" />
+        <option value="V:/MeshLab/_Field Survey/MK/python/pythonTest/Barcodes/barcode_print--4x6 -- classes 2018-06-19.py" />
+        <option value="V:/MeshLab/_Field Survey/MK/python/pythonTest/Rhino/RhinoReport/CopyFile.py" />
       </list>
     </option>
   </component>
@@ -152,7 +127,7 @@
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
-    <option name="height" value="1096" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -206,7 +181,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.barcode_print--4x6">
+  <component name="RunManager" selected="Python.CopyFile">
     <configuration name="CopyFile" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -224,7 +199,41 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="barcode_print--4x6" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="RhinoReport" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="V:/MeshLab/_Field Survey/MK/python/pythonTest/Rhino/RhinoReport" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tools" />
+      <option name="SCRIPT_NAME" value="V:/MeshLab/_Field Survey/MK/python/pythonTest/Rhino/RhinoReport/RhinoReport.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="SampleReportGenerator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="V:/Sample Data/_Meta" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tools" />
+      <option name="SCRIPT_NAME" value="V:/Sample Data/_Meta/SampleReportGenerator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="barcode_print--4x6 -- classes 2018-06-19" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -236,57 +245,42 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tools" />
-      <option name="SCRIPT_NAME" value="V:/MeshLab/_Field Survey/MK/python/pythonTest/Barcodes/barcode_print--4x6.py" />
+      <option name="SCRIPT_NAME" value="V:/MeshLab/_Field Survey/MK/python/pythonTest/Barcodes/barcode_print--4x6 -- classes 2018-06-19.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="photo_sorting" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="barcode_print--4x6 -- classes" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="WORKING_DIRECTORY" value="V:/MeshLab/_Field Survey/MK/python/pythonTest/Barcodes" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tools" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/photo_sorting.py" />
+      <option name="SCRIPT_NAME" value="V:/MeshLab/_Field Survey/MK/python/pythonTest/Barcodes/barcode_print--4x6 -- classes.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="scratch" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tools" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scratch.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="Python.photo_sorting" />
-      <item index="1" class="java.lang.String" itemvalue="Python.scratch" />
-      <item index="2" class="java.lang.String" itemvalue="Python.CopyFile" />
-      <item index="3" class="java.lang.String" itemvalue="Python.barcode_print--4x6" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Python.CopyFile" />
+      <item index="1" class="java.lang.String" itemvalue="Python.SampleReportGenerator" />
+      <item index="2" class="java.lang.String" itemvalue="Python.RhinoReport" />
+      <item index="3" class="java.lang.String" itemvalue="Python.barcode_print--4x6 -- classes" />
+      <item index="4" class="java.lang.String" itemvalue="Python.barcode_print--4x6 -- classes 2018-06-19" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.barcode_print--4x6" />
-        <item index="1" class="java.lang.String" itemvalue="Python.CopyFile" />
-        <item index="2" class="java.lang.String" itemvalue="Python.photo_sorting" />
-        <item index="3" class="java.lang.String" itemvalue="Python.scratch" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.CopyFile" />
+        <item index="1" class="java.lang.String" itemvalue="Python.SampleReportGenerator" />
+        <item index="2" class="java.lang.String" itemvalue="Python.barcode_print--4x6 -- classes 2018-06-19" />
+        <item index="3" class="java.lang.String" itemvalue="Python.barcode_print--4x6 -- classes" />
+        <item index="4" class="java.lang.String" itemvalue="Python.RhinoReport" />
       </list>
     </recent_temporary>
   </component>
@@ -306,12 +300,12 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18496802" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2521322" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21606949" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22258414" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -331,25 +325,52 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/photo_sorting.py">
+    <entry file="file://V:/Sample Data/_Meta/CopyFile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#190#590#0" expanded="false" />
-            <element signature="e#617#977#0" expanded="false" />
-            <element signature="e#1010#1093#0" expanded="false" />
-            <element signature="e#1124#1357#0" expanded="false" />
-            <element signature="e#1389#2623#0" expanded="false" />
-            <element signature="e#2654#2909#0" expanded="false" />
-            <element signature="e#2949#3475#0" expanded="false" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/Barcodes/barcode_print.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <caret line="42" column="31" lean-forward="false" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+          <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/Barcodes/barcode_print--4x6.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Projects/BVTC/survey.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/Projects/BVTC/test2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo_sorting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="158" column="11" lean-forward="false" selection-start-line="158" selection-start-column="11" selection-end-line="158" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -365,9 +386,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1581">
           <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -375,9 +393,78 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="22" column="34" lean-forward="false" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/Rhino/RhinoReport/CopyFile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://V:/Sample Data/_Meta/SampleReportGenerator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://V:/Sample Data/_Meta/CopyFile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/Barcodes/barcode_print.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <caret line="42" column="31" lean-forward="false" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+          <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/Barcodes/barcode_print--4x6.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1598">
+          <caret line="102" column="0" lean-forward="true" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photo_sorting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scratch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/Agisoft/Agi_1_4_0/process_duplicate_all---no-align.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1581">
+          <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/RaspPiKilns/Raspi_Kilns.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="22" column="34" lean-forward="false" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -395,7 +482,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -403,7 +492,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -411,16 +499,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1139">
           <caret line="164" column="0" lean-forward="false" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#190#590#0" expanded="false" />
-            <element signature="e#617#977#0" expanded="false" />
-            <element signature="e#1010#1093#0" expanded="false" />
-            <element signature="e#1124#1357#0" expanded="false" />
-            <element signature="e#1389#2623#0" expanded="false" />
-            <element signature="e#2654#2909#0" expanded="false" />
-            <element signature="e#2949#3475#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -436,9 +514,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1581">
           <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -446,9 +521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="22" column="34" lean-forward="false" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -466,16 +538,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#190#590#0" expanded="false" />
-            <element signature="e#617#977#0" expanded="false" />
-            <element signature="e#1010#1093#0" expanded="false" />
-            <element signature="e#1124#1357#0" expanded="false" />
-            <element signature="e#1389#2623#0" expanded="false" />
-            <element signature="e#2654#2909#0" expanded="false" />
-            <element signature="e#2949#3475#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -491,9 +553,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1581">
           <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -501,9 +560,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="22" column="34" lean-forward="false" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -521,16 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1139">
           <caret line="164" column="0" lean-forward="true" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#190#590#0" expanded="false" />
-            <element signature="e#617#977#0" expanded="false" />
-            <element signature="e#1010#1093#0" expanded="false" />
-            <element signature="e#1124#1357#0" expanded="false" />
-            <element signature="e#1389#2623#0" expanded="false" />
-            <element signature="e#2654#2909#0" expanded="false" />
-            <element signature="e#2949#3475#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -546,9 +592,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1581">
           <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -556,9 +599,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="22" column="34" lean-forward="false" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -567,19 +607,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="22" column="34" lean-forward="false" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/Rhino/RhinoReport/CopyFile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -587,25 +614,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://V:/Sample Data/_Meta/SampleReportGenerator.py">
+    <entry file="file://$PROJECT_DIR$/photo_sorting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="158" column="11" lean-forward="false" selection-start-line="158" selection-start-column="11" selection-end-line="158" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/Projects/BVTC/test2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/Agisoft/Agi_1_4_0/process_duplicate_all---no-align.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1581">
+        <state relative-caret-position="589">
           <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -617,41 +646,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/photo_sorting.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="158" column="11" lean-forward="false" selection-start-line="158" selection-start-column="11" selection-end-line="158" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#190#590#0" expanded="false" />
-            <element signature="e#617#977#0" expanded="false" />
-            <element signature="e#1010#1093#0" expanded="false" />
-            <element signature="e#1124#1357#0" expanded="false" />
-            <element signature="e#1389#2623#0" expanded="false" />
-            <element signature="e#2654#2909#0" expanded="false" />
-            <element signature="e#2949#3475#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/Barcodes/barcode_print.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
+        <state relative-caret-position="561">
           <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <caret line="42" column="31" lean-forward="false" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
           <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Projects/BVTC/survey.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/Barcodes/scratch 2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/Barcodes/barcode_print--4x6.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="102" column="0" lean-forward="true" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+        <state relative-caret-position="242">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/Rhino/RhinoReport/RhinoReport.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="79" column="11" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="81" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/Barcodes/barcode_print--4x6 -- classes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-902">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/Barcodes/barcode_print--4x6 -- classes 2018-06-19.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3961">
+          <caret line="367" column="38" lean-forward="false" selection-start-line="367" selection-start-column="38" selection-end-line="367" selection-end-column="38" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#313#599#0" expanded="false" />
+            <element signature="e#727#1721#0" expanded="false" />
+            <element signature="e#1757#1919#0" expanded="false" />
+            <element signature="e#1956#1960#0" expanded="false" />
+            <element signature="e#2001#2123#0" expanded="false" />
+            <element signature="e#2172#2206#0" expanded="false" />
+            <element signature="e#2240#2244#0" expanded="false" />
+            <element signature="e#2277#2726#0" expanded="false" />
+            <element signature="e#6877#6881#0" expanded="false" />
+            <element signature="e#7247#7863#0" expanded="false" />
+            <element signature="e#8427#8496#0" expanded="false" />
+            <element signature="e#8539#8908#0" expanded="false" />
+            <element signature="e#9577#10769#0" expanded="false" />
+            <element signature="e#10794#10885#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://V:/Sample Data/_Meta/SampleReportGenerator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="52" column="24" lean-forward="false" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://V:/MeshLab/_Field Survey/MK/python/pythonTest/Rhino/RhinoReport/CopyFile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="107" column="11" lean-forward="false" selection-start-line="107" selection-start-column="11" selection-end-line="107" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
