@@ -1,0 +1,8 @@
+2018-11-15 08:20:11.714493
+mkreidler@BVTC-Render08
+
+Copied From: 
+Copied To: 
+Extensions: ['3dm', 'pdf']
+
+Number of Files Compared: 0

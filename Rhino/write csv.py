@@ -61,7 +61,7 @@ class Zone(Common):
 
 
 def main():
-    path = r"C:\Users\mkreidler\Desktop\test.csv"
+    path = r"C:\Users\mkreidler\Desktop\test2.csv"
     c = Collection()
     z = Zone(c)
     z.labels(3)
