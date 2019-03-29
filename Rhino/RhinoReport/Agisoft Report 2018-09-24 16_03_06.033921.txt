@@ -1,0 +1,8 @@
+2018-09-24 16:03:06.033921
+mkreidler@BVTC-Render08
+
+Copied From: Z:/cathedral st john/2018-09-17
+Copied To: 
+Extensions: ['3dm', 'pdf']
+
+Number of Files Compared: 0

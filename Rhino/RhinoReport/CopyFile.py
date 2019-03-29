@@ -109,7 +109,7 @@ def main():
 
     try:
         src_dir = get_path("Select Folder to Copy From",
-                           default_dir="S:")
+                           default_dir="Z:")
         dst_dir = get_path("Select Folder to Copy To")
         rpt = Report(dst_dir)
         rpt.create()

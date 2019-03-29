@@ -1,4 +1,4 @@
-import uuid
+ZEimport uuid
 import rhinoscriptsyntax as rs
 import uuid
 import getpass
@@ -62,6 +62,47 @@ class Zone(Common):
             text = "{}-{}".format(self.type, self.name)
             self.dot = rs.AddTextDot(text, self.point)
             print text
+            
+            
+    def label_areas(self):
+        
+        areas = rs.GetObjects("Select Zones/Areas")
+        self.type = "Area"
+        
+        for i, a in enumerate(areas):
+            result = rs.CurveAreaCentroid(a)
+            point = result[0]
+            error = result[1]
+            self.guid = a
+            self.name = i
+            self.collection.types.append(self.type)
+            self.collection.names.append(self.name)
+            self.collection.guids.append(self.guid)
+            self.point = point
+            text = "{}-{}".format(self.type, self.name)
+            self.dot = rs.AddTextDot(text, self.point)
+            print text
+            
+
+    def label_blocks(self):
+        
+        areas = rs.GetObjects("Select Zones/Areas")
+        self.type = "Block"
+        
+        for i, a in enumerate(areas):
+            result = rs.PointCoordinates(a)
+            point = result
+            self.guid = a
+            self.name = i
+            self.collection.types.append(self.type)
+            self.collection.names.append(self.name)
+            self.collection.guids.append(self.guid)
+            self.point = point
+            text = "{}-{}".format(self.type, self.name)
+            self.dot = rs.AddTextDot(text, self.point)
+            print text
+            
+
 
     
     def labels(self, num=1):
@@ -83,7 +124,7 @@ def main():
     path = r"C:\Users\mkreidler\Desktop\test.csv"
     c = Collection()
     z = Zone(c)
-    z.label_same_type()
+    z.label_blocks()
     z.write_csv(path)
 
 if __name__ == "__main__":
