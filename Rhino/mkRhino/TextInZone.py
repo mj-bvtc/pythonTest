@@ -66,7 +66,7 @@ def main():
     
     rs.EnableRedraw(False)
     
-    zones = convert_zone(r"C:\Users\mkreidler\Desktop\zones - Copy.txt")
+    zones = convert_zone(r"V:\Projects\PS 171M_P18-1593\TerraCotta\_Preliminary_Models\_archive\zones copy.txt")
     blocks = []
     for t in text:
         b = block()
@@ -81,7 +81,7 @@ def main():
         blocks.append(b)
         #print b.zones
     rs.EnableRedraw(True)
-    path = r"C:\Users\mkreidler\Desktop\rhinoexport.txt"
+    path = r"V:\Projects\PS 171M_P18-1593\TerraCotta\_Preliminary_Models\_archive\text_in_zone.txt"
     try:
         
         
