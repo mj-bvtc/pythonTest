@@ -18,9 +18,12 @@ class Common(object):
 class Collection(Common):
     def __init__(self):
         super(Collection, self).__init__()
-        self.guids = ["GUID"]
-        self.names = ["Name"]
-        self.types = ["Type"]
+        #self.guids = ["GUID"]
+        #self.names = ["Name"]
+        #self.types = ["Type"]
+        self.guids = []
+        self.names = []
+        self.types = []
 
 class Zone(Common):
     def __init__(self, collection):
@@ -40,7 +43,7 @@ class Zone(Common):
         self.collection.names.append(self.name)
         self.collection.guids.append(self.guid)
         self.point = rs.GetPoint("Choose where to label")
-        text = "[{}-{}]  {}".format(self.type, self.name, self.guid)
+        text = "{}-{}".format(self.type, self.name)
         self.dot = rs.AddTextDot(text, self.point)
         print text
         return text
@@ -56,7 +59,7 @@ class Zone(Common):
             self.collection.names.append(self.name)
             self.collection.guids.append(self.guid)
             self.point = rs.GetPoint("Choose where to label")
-            text = "[{}-{}]  {}".format(self.type, self.name, self.guid)
+            text = "{}-{}".format(self.type, self.name)
             self.dot = rs.AddTextDot(text, self.point)
             print text
 
@@ -66,7 +69,7 @@ class Zone(Common):
             self.label()
             
     def write_csv(self, path):
-        with open(path, 'w') as f:
+        with open(path, 'a') as f:
             for i in range(len(self.collection.types)):
                 t = self.collection.types[i]
                 n = self.collection.names[i]
