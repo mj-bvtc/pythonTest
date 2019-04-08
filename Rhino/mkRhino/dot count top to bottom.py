@@ -13,11 +13,11 @@ blocks = []
 for d in dots:
     b = block()
     x,y,z = rs.TextDotPoint(d)
-    b.z = z
+    b.y = y
     b.guid = d
     blocks.append(b)
 
-blocks.sort(key=lambda x: x.z, reverse=True)
+blocks.sort(key=lambda x: x.y, reverse=True)
 
 rs.EnableRedraw(False)
 
