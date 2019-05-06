@@ -1,0 +1,250 @@
+select * from "Drafting Drawng Log" order by 'Week Ending' desc
+
+
+Crystal reports login string
+
+Driver=Pervasive ODBC Client Interface;ServerName=192.168.245.13;dbq=CTRAC1
+
+
+
+
+select * from "DraftingData"
+where "Project Number" = 'P15-0383'
+
+
+
+select distinct "User" from "DraftingData"
+where "Project Number" = 'P17-1006'
+
+
+
+select * from "DraftingData"
+where "Project Number" = 'P18-1325'  
+and "Block ID" like '%E'
+and "UnitQuantity" > 0
+
+
+CREATE PROCEDURE "Shell_Update"();
+BEGIN 
+
+// Update commands for drawing names //	
+UPDATE "DraftingData" SET
+	"Block ID" = LEFT(RTRIM("Block ID"), LENGTH(RTRIM("Block ID"))-2) + '-A',
+	"GlazeColor" = '(TAN) 36'
+WHERE "Project Number" = 'P18-1325'
+	AND RIGHT(RTRIM("Block ID"), 2) = '-1';
+	
+UPDATE "DraftingData" SET
+	"Block ID" = LEFT(RTRIM("Block ID"), LENGTH(RTRIM("Block ID"))-2) + '-B',
+	"GlazeColor" = '(TAN) DK YELLOW 12'
+WHERE "Project Number" = 'P18-1325'
+	AND RIGHT(RTRIM("Block ID"), 2) = '-2';
+	
+UPDATE "DraftingData" SET
+	"Block ID" = LEFT(RTRIM("Block ID"), LENGTH(RTRIM("Block ID"))-2) + '-C',
+	"GlazeColor" = '(TAN) DK YELLOW 11'
+WHERE "Project Number" = 'P18-1325'
+	AND RIGHT(RTRIM("Block ID"), 2) = '-3';
+
+UPDATE "DraftingData" SET
+	"Block ID" = LEFT(RTRIM("Block ID"), LENGTH(RTRIM("Block ID"))-2) + '-D',
+	"GlazeColor" = '(TAN) 26'
+WHERE "Project Number" = 'P18-1325'
+	AND RIGHT(RTRIM("Block ID"), 2) = '-4';
+	
+UPDATE "DraftingData" SET
+	"Block ID" = LEFT(RTRIM("Block ID"), LENGTH(RTRIM("Block ID"))-2) + '-E',
+	"GlazeColor" = 'SOME_OTHER_GLAZE'
+WHERE "Project Number" = 'P18-1325'
+	AND RIGHT(RTRIM("Block ID"), 2) = '-5';
+
+UPDATE "DraftingData" SET
+	"Block ID" = LEFT(RTRIM("Block ID"), LENGTH(RTRIM("Block ID"))-2) + '-F',
+	"GlazeColor" = '(TAN) 2'
+WHERE "Project Number" = 'P18-1325'
+	AND RIGHT(RTRIM("Block ID"), 2) = '-6';
+	
+UPDATE "DraftingData" SET
+	"GlazeColor" = 'SOME_OTHER_GLAZE'
+WHERE "Project Number" = 'P18-1325'
+	AND RIGHT(RTRIM("Block ID"), 2) = '-E';
+END;
+
+
+
+..........................................
+
+
+
+
+select * from "Mstr Block WS Summ"
+where "Project Number" = 'P18-1325'
+and "SubmittalStatus" <> ''
+
+
+
+
+
+................................
+
+
+
+
+
+CREATE VIEW "ShellCheck" AS
+SELECT 
+	ctrac."Block ID" AS "CtracID",
+	ctrac.CtracCount,
+	client.ClientCount,
+	client."Block ID" AS "ClientID"
+FROM
+(
+	SELECT 
+		"Block ID",
+		COUNT("Block ID" ) AS "CtracCount"
+	FROM "Mstr Block WS Detl" 
+	WHERE "Project Number" = 'P18-1325'
+		AND "Priority" NOT IN ('VOID', '')
+	GROUP BY "Block ID"
+) AS ctrac
+FULL JOIN (
+	SELECT 
+		COUNT("Block ID") AS "ClientCount",
+		"Block ID"
+	FROM ShellClientData as client
+	GROUP BY "Block ID"
+) AS client
+ON client."Block ID" = ctrac."Block ID"
+WHERE ctrac.CtracCount != client.ClientCount
+	OR ClientID IS NULL
+	OR CtracID IS NULL 
+
+
+
+
+
+
+
+
+.......................................
+
+
+
+
+select * from ShellCheck
+
+
+...........
+
+
+select * from "Mstr Block WS Detl"
+where "Project Number" = 'P18-1325'
+and ("Block ID" = 'CS15R-D' or "Block ID" = 'CS15R-F')
+
+..........................
+
+
+
+select "Project Number", "Priority", "FormingMethod", "UnitQuantity", "Block Line Number", "Current Location", "Block ID"  from "Mstr Block WS Detl"
+where "Project Number" = 'P18-1325'
+and "Block ID" = 'A1N-C'
+
+
+
+
+
+
+.........................
+
+
+//select * from "ShellClientData"
+//delete from "ShellClientData"
+
+where "Block ID" like 'Q3-%'
+
+..................
+
+
+
+
+
+
+for 35 e wacker
+
+
+
+select "Block ID", "UnitQuantity", "Length", "Height", "Depth", "Description", "DrawingNumber","DraftingComments" from "Mstr Block WS Summ"
+
+
+
+where "Project Number" = 'P14-0436'
+
+
+
+//select * from "Mstr Block WS Summ"
+//where "Project Number" = 'P14-0436'
+
+
+select "Block ID", "UnitQuantity", "Priority" from "Mstr Block WS Summ"
+
+
+
+where "Project Number" = 'P14-0436'
+
+
+
+select "Block ID", "UnitQuantity", "Priority" from "Mstr Block WS Summ"
+
+
+
+where "Project Number" = 'P19-9999'
+
+
+
+
+
+
+
+select "Block ID", "UnitQuantity", "Priority" from "Mstr Block WS Summ"
+
+
+
+where "Project Number" = 'P19-9999' and "Priority" = '12S_1_RE'
+
+
+
+
+
+
+
+.........................................................................................................................
+
+
+select "Priority", "Block ID", "FormingMethod", "SampleName", "DrawingNumber", "UnitQuantity",  
+"Crate Number", "Current Location", "Current Shipping Sta" from "Mstr Block WS Detl"
+
+
+where "Project Number" = 'P19-9999'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

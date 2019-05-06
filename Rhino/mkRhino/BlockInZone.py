@@ -62,17 +62,17 @@ def main():
     
     
     
-    text = rs.GetObjects("Select Text")
+    blockinstance = rs.GetObjects("Select Block Instances")
     
     rs.EnableRedraw(False)
     
     zones = convert_zone(r"V:\Projects\PS 171M_P18-1593\TerraCotta\_Preliminary_Models\_archive\zones copy.txt")
     blocks = []
-    for t in text:
+    for t in blockinstance:
         b = block()
-        b.point = rs.TextObjectPoint(t)
+        b.point = rs.BlockInstanceInsertPoint(t)
         b.layer = rs.ObjectLayer(t)
-        b.name = rs.TextObjectText(t)
+        b.name = rs.BlockInstanceName(t).replace(","," + ")
         b.guid = t
     
         b.zones = str(point_zones(b.point, zones)).replace(",", "//")
@@ -81,7 +81,7 @@ def main():
         blocks.append(b)
         #print b.zones
     rs.EnableRedraw(True)
-    path = r"V:\Projects\PS 171M_P18-1593\TerraCotta\_Preliminary_Models\_archive\text_in_zone.txt"
+    path = r"V:\Projects\PS 171M_P18-1593\TerraCotta\_Preliminary_Models\_archive\block_in_zone.txt"
     try:
         
         
