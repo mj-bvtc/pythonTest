@@ -1,0 +1,669 @@
+//how TO FIND THE DRAWING NUMBER FOR 35 E WACKER
+
+//select "Project Number", "Priority", "FormingMethod", "UnitQuantity", "Block Line Number", "Current Location", "Block ID"  from "Mstr Block WS Detl"
+//where "Project Number" = 'P19-9999'
+//and "Block ID" = '2B7'
+
+
+
+
+//select *  from "Mstr Block WS Detl"
+//where "Project Number" = 'P19-9999'
+//and "Block ID" = '2B7'
+
+
+select "Project Number", "Priority", "FormingMethod", "UnitQuantity", "Block Line Number", "Current Location", "Block ID", "DrawingNumber"  from "Mstr Block WS Detl"
+where "Project Number" = 'P19-9999'
+and "Block ID" = 'B23A'
+
+*************************************
+
+
+
+
+select * from "Drafting Drawng Log" order by 'Week Ending' desc
+
+
+Crystal reports login string
+
+Driver=Pervasive ODBC Client Interface;ServerName=192.168.245.13;dbq=CTRAC1
+
+
+
+
+select * from "DraftingData"
+where "Project Number" = 'P15-0383'
+
+
+
+select distinct "User" from "DraftingData"
+where "Project Number" = 'P17-1006'
+
+
+
+select * from "DraftingData"
+where "Project Number" = 'P18-1325'  
+and "Block ID" like '%E'
+and "UnitQuantity" > 0
+
+
+CREATE PROCEDURE "Shell_Update"();
+BEGIN 
+
+// Update commands for drawing names //	
+UPDATE "DraftingData" SET
+	"Block ID" = LEFT(RTRIM("Block ID"), LENGTH(RTRIM("Block ID"))-2) + '-A',
+	"GlazeColor" = '(TAN) 36'
+WHERE "Project Number" = 'P18-1325'
+	AND RIGHT(RTRIM("Block ID"), 2) = '-1';
+	
+UPDATE "DraftingData" SET
+	"Block ID" = LEFT(RTRIM("Block ID"), LENGTH(RTRIM("Block ID"))-2) + '-B',
+	"GlazeColor" = '(TAN) DK YELLOW 12'
+WHERE "Project Number" = 'P18-1325'
+	AND RIGHT(RTRIM("Block ID"), 2) = '-2';
+	
+UPDATE "DraftingData" SET
+	"Block ID" = LEFT(RTRIM("Block ID"), LENGTH(RTRIM("Block ID"))-2) + '-C',
+	"GlazeColor" = '(TAN) DK YELLOW 11'
+WHERE "Project Number" = 'P18-1325'
+	AND RIGHT(RTRIM("Block ID"), 2) = '-3';
+
+UPDATE "DraftingData" SET
+	"Block ID" = LEFT(RTRIM("Block ID"), LENGTH(RTRIM("Block ID"))-2) + '-D',
+	"GlazeColor" = '(TAN) 26'
+WHERE "Project Number" = 'P18-1325'
+	AND RIGHT(RTRIM("Block ID"), 2) = '-4';
+	
+UPDATE "DraftingData" SET
+	"Block ID" = LEFT(RTRIM("Block ID"), LENGTH(RTRIM("Block ID"))-2) + '-E',
+	"GlazeColor" = 'SOME_OTHER_GLAZE'
+WHERE "Project Number" = 'P18-1325'
+	AND RIGHT(RTRIM("Block ID"), 2) = '-5';
+
+UPDATE "DraftingData" SET
+	"Block ID" = LEFT(RTRIM("Block ID"), LENGTH(RTRIM("Block ID"))-2) + '-F',
+	"GlazeColor" = '(TAN) 2'
+WHERE "Project Number" = 'P18-1325'
+	AND RIGHT(RTRIM("Block ID"), 2) = '-6';
+	
+UPDATE "DraftingData" SET
+	"GlazeColor" = 'SOME_OTHER_GLAZE'
+WHERE "Project Number" = 'P18-1325'
+	AND RIGHT(RTRIM("Block ID"), 2) = '-E';
+END;
+
+
+
+..........................................
+
+
+
+
+select * from "Mstr Block WS Summ"
+where "Project Number" = 'P18-1325'
+and "SubmittalStatus" <> ''
+
+
+
+
+
+................................
+
+
+
+
+
+CREATE VIEW "ShellCheck" AS
+SELECT 
+	ctrac."Block ID" AS "CtracID",
+	ctrac.CtracCount,
+	client.ClientCount,
+	client."Block ID" AS "ClientID"
+FROM
+(
+	SELECT 
+		"Block ID",
+		COUNT("Block ID" ) AS "CtracCount"
+	FROM "Mstr Block WS Detl" 
+	WHERE "Project Number" = 'P18-1325'
+		AND "Priority" NOT IN ('VOID', '')
+	GROUP BY "Block ID"
+) AS ctrac
+FULL JOIN (
+	SELECT 
+		COUNT("Block ID") AS "ClientCount",
+		"Block ID"
+	FROM ShellClientData as client
+	GROUP BY "Block ID"
+) AS client
+ON client."Block ID" = ctrac."Block ID"
+WHERE ctrac.CtracCount != client.ClientCount
+	OR ClientID IS NULL
+	OR CtracID IS NULL 
+
+
+
+
+
+
+
+
+.......................................
+
+
+
+
+select * from ShellCheck
+
+
+...........
+
+
+select * from "Mstr Block WS Detl"
+where "Project Number" = 'P18-1325'
+and ("Block ID" = 'CS15R-D' or "Block ID" = 'CS15R-F')
+
+..........................
+
+
+
+select "Project Number", "Priority", "FormingMethod", "UnitQuantity", "Block Line Number", "Current Location", "Block ID"  from "Mstr Block WS Detl"
+where "Project Number" = 'P18-1325'
+and "Block ID" = 'A1N-C'
+
+
+
+
+
+
+.........................
+
+
+//select * from "ShellClientData"
+//delete from "ShellClientData"
+
+where "Block ID" like 'Q3-%'
+
+..................
+
+
+
+
+
+
+for 35 e wacker
+
+
+
+select "Block ID", "UnitQuantity", "Length", "Height", "Depth", "Description", "DrawingNumber","DraftingComments" from "Mstr Block WS Summ"
+
+
+
+where "Project Number" = 'P14-0436'
+
+
+
+//select * from "Mstr Block WS Summ"
+//where "Project Number" = 'P14-0436'
+
+
+select "Block ID", "UnitQuantity", "Priority" from "Mstr Block WS Summ"
+
+
+
+where "Project Number" = 'P14-0436'
+
+
+
+select "Block ID", "UnitQuantity", "Priority" from "Mstr Block WS Summ"
+
+
+
+where "Project Number" = 'P19-9999'
+
+
+
+
+
+
+
+select "Block ID", "UnitQuantity", "Priority" from "Mstr Block WS Summ"
+
+
+
+where "Project Number" = 'P19-9999' and "Priority" = '12S_1_RE'
+
+
+
+
+
+
+
+.........................................................................................................................
+
+
+select "Priority", "Block ID", "FormingMethod", "SampleName", "DrawingNumber", "UnitQuantity",  
+"Crate Number", "Current Location", "Current Shipping Sta" from "Mstr Block WS Detl"
+
+
+where "Project Number" = 'P19-9999'
+
+
+
+
+
+
+
+
+
+select "Priority", "Block ID", "FormingMethod", "SampleName", "DrawingNumber", "UnitQuantity",  
+"Crate Number", "Current Location", "Current Shipping Sta", "Void Status" from "Mstr Block WS Detl"
+
+
+where "Project Number" = 'P19-9999'
+
+
+
+
+
+
+
+
+
+*****************************************************************************************************************************************
+
+select * from "ShellLinkData"
+where "Client ID" in ('W-CX22', 'W-CX25','W-CY12', 'W-CY13', 'W-CY16', 'W-CZ17', 'W-CZ21', 'W-CZ25')
+
+
+
+
+select * from "ShellClientData"
+where "Client ID" in ('W-CX22', 'W-CX25','W-CY12', 'W-CY13', 'W-CY16', 'W-CZ25')
+
+
+
+
+
+
+*************************************************************************************************
+
+
+select "Priority", "Block ID", "FormingMethod", "SampleName", "DrawingNumber", "UnitQuantity",  
+"Crate Number", "Current Location", "Current Shipping Sta", "Void Status", "Date Scanned", "Block Line Number" from "Mstr Block WS Detl"
+
+
+
+where "Project Number" = 'P19-9999'
+
+
+************************
+
+
+
+select "Priority", "Block ID", "FormingMethod", "SampleName", "DrawingNumber", "UnitQuantity",  
+"Crate Number", "Current Location", "Current Shipping Sta", "Void Status", "Date Scanned", "Block Line Number" from "Mstr Block WS Detl"
+
+
+
+where "Project Number" = 'P19-9999'
+
+and "Void Status" = ''
+
+and "Date Scanned" = '00000000'
+
+and "Priority" not in ('10S', '10S_1_RE', '10S_RE', '11S', 
+		'11S_1_RE', '12S_1_RE', '12S_D2', '12S_D2RE', '12S_D3', '12S_D3RE', '13S', 
+		'13S_1_RE', '13S_RE', '6S_D4', '7S', '7S_1_RE', '8S', '8S_1', '8S_1_RE', '8S_RE', 
+		'9S', '9S_1_RE', '9S_RE', 'NIS', 'VOID', 'ZEXTRA')
+
+//select distinct "Date Scanned" from "Mstr Block WS Detl"
+//where "Project Number" = 'P19-9999'
+
+*****************************************************
+
+select "Priority", "Block ID", "FormingMethod", "SampleName", "DrawingNumber", "UnitQuantity",  
+"Crate Number", "Current Location", "Current Shipping Sta", "Void Status", "Date Scanned", "Block Line Number" from "Mstr Block WS Detl"
+
+
+
+where "Project Number" = 'P19-9999'
+
+and "Void Status" = ''
+
+and "Date Scanned" = '00000000'
+
+and "Priority" not in (
+		'10S', 
+		'10S_1_RE', 
+		'10S_RE', 
+		'11S', 
+		'11S_1_RE', 
+		'12S_1_RE', 
+		'12S_D2', 
+		'12S_D2RE', 
+		'12S_D3', 
+		'12S_D3RE', 
+		'13S', 
+		'13S_1_RE', 
+		'13S_RE', 
+		'6S_D4', 
+		'7S', 
+		'7S_1_RE', 
+		'8S', 
+		'8S_1', 
+		'8S_1_RE', 
+		'8S_RE', 
+		'9S', 
+		'9S_1_RE', 
+		'9S_RE', 
+		'NIS', 
+		'VOID', 
+		'ZEXTRA',
+		'SHIPPED')
+
+and "Priority" not like '%RE%'
+
+//select distinct "Date Scanned" from "Mstr Block WS Detl"
+//where "Project Number" = 'P19-9999'
+
+
+*******
+
+
+select count( "Block Line Number") from "Mstr Block WS Detl"
+
+
+
+where "Project Number" = 'P19-9999'
+
+and "Void Status" = ''
+
+and "Date Scanned" = '00000000'
+
+and "Priority" not in (
+		'10S', 
+		'10S_1_RE', 
+		'10S_RE', 
+		'11S', 
+		'11S_1_RE', 
+		'12S_1_RE', 
+		'12S_D2', 
+		'12S_D2RE', 
+		'12S_D3', 
+		'12S_D3RE', 
+		'13S', 
+		'13S_1_RE', 
+		'13S_RE', 
+		'6S_D4', 
+		'7S', 
+		'7S_1_RE', 
+		'8S', 
+		'8S_1', 
+		'8S_1_RE', 
+		'8S_RE', 
+		'9S', 
+		'9S_1_RE', 
+		'9S_RE', 
+		'NIS', 
+		'VOID', 
+		'ZEXTRA',
+		'SHIPPED')
+		
+and "Priority" not like '%RE%'
+
+
+
+***************************
+
+
+select count("Project Number") from "Mstr Block WS Detl"
+
+
+
+where "Project Number" = 'P19-9999'
+
+
+
+and "Date Scanned" = '00000000'
+
+
+and "Void L" = 0
+
+and "Priority" not in (
+		'10S', 
+		'10S_1_RE', 
+		'10S_RE', 
+		'11S', 
+		'11S_1_RE', 
+		'12S_1_RE', 
+		'12S_D2', 
+		'12S_D2RE', 
+		'12S_D3', 
+		'12S_D3RE', 
+		'13S', 
+		'13S_1_RE', 
+		'13S_RE', 
+		'6S_D4', 
+		'7S', 
+		'7S_1_RE', 
+		'8S', 
+		'8S_1', 
+		'8S_1_RE', 
+		'8S_RE', 
+		'9S', 
+		'9S_1_RE', 
+		'9S_RE', 
+		'NIS', 
+		'VOID', 
+		'ZEXTRA',
+		'SHIPPED')
+
+
+//and "Priority" not like '%RE%'
+
+
+
+****************************
+
+select "Priority", "Block ID", "FormingMethod", "SampleName", "DrawingNumber", "UnitQuantity",  
+"Crate Number", "Current Location", "Current Shipping Sta", "Void L", "Date Scanned", "Block Line Number" from "Mstr Block WS Detl"
+
+
+
+where "Project Number" = 'P19-9999'
+
+
+
+and "Date Scanned" = '00000000'
+
+
+and "Void L" = 0
+
+and "Priority" not in (
+		'10S', 
+		'10S_1_RE', 
+		'10S_RE', 
+		'11S', 
+		'11S_1_RE', 
+		'12S_1_RE', 
+		'12S_D2', 
+		'12S_D2RE', 
+		'12S_D3', 
+		'12S_D3RE', 
+		'13S', 
+		'13S_1_RE', 
+		'13S_RE', 
+		'6S_D4', 
+		'7S', 
+		'7S_1_RE', 
+		'8S', 
+		'8S_1', 
+		'8S_1_RE', 
+		'8S_RE', 
+		'9S', 
+		'9S_1_RE', 
+		'9S_RE', 
+		'NIS', 
+		'VOID', 
+		'ZEXTRA',
+		'SHIPPED')
+
+
+//and "Priority" not like '%RE%'
+
+
+
+
+
+******************************
+
+
+
+
+
+select "Priority", count("Block ID") as "block_count" from "Mstr Block WS Detl"
+
+
+
+where "Project Number" = 'P19-9999'
+
+
+
+and "Date Scanned" = '00000000'
+
+
+and "Void L" = 0
+
+and "Priority" not in (
+		'10S', 
+		'10S_1_RE', 
+		'10S_RE', 
+		'11S', 
+		'11S_1_RE', 
+		'12S_1_RE', 
+		'12S_D2', 
+		'12S_D2RE', 
+		'12S_D3', 
+		'12S_D3RE', 
+		'13S', 
+		'13S_1_RE', 
+		'13S_RE', 
+		'6S_D4', 
+		'7S', 
+		'7S_1_RE', 
+		'8S', 
+		'8S_1', 
+		'8S_1_RE', 
+		'8S_RE', 
+		'9S', 
+		'9S_1_RE', 
+		'9S_RE', 
+		'NIS', 
+		'VOID', 
+		'ZEXTRA',
+		'SHIPPED',
+		'NM')
+group by "Priority"
+
+********************************************************8
+
+
+
+select  "Priority", "Block ID", "FormingMethod", "SampleName", "DrawingNumber", "UnitQuantity",  
+"Crate Number", "Current Location", "Current Shipping Sta", "Void L", "Date Scanned", "Block Line Number"  from "Mstr Block WS Detl"
+
+
+
+where "Project Number" = 'P18-1317'
+
+
+
+//and "Date Scanned" = '00000000'
+
+
+and "Void L" = 0
+
+and "Priority" not in (
+
+		'VOID', 
+		'ZEXTRA')
+
+
+******************************
+
+
+select "Block ID", sum("UnitQty") as "block_qty" from "PreProd Mold Worksht"
+//select * from "PreProd Mold Worksht"
+
+where "Project Number" = 'P18-1325'
+
+and "Use Mold" = ''
+
+and "FormingMethod" != 'EXT'
+
+group by "Block ID"
+
+
+
+***********************************************
+
+
+select distinct "dd" ."Project Number", "dd" ."User", "project" ."Short Description"
+
+	from "DraftingData" "dd"
+
+		
+			inner join "Project Master Heade" "project"
+				on "dd" ."Project Number" = "project" ."Project Number"
+				
+
+
+where "dd" ."User" = 'RPM'
+
+
+
+**********************************
+
+
+select distinct "dd" ."Project Number", "dd" ."User", "project" ."Short Description"
+
+	from "DraftingData" "dd"
+
+		
+			inner join "Project Master Heade" "project"
+				on "dd" ."Project Number" = "project" ."Project Number"
+				
+
+
+where 	("dd" ."User" = 'MK') or 
+		("dd" ."User" = 'MJK')
+
+
+*****************************************************************
+
+
+//select  "Priority", "Block ID", "FormingMethod", "SampleName", "DrawingNumber", "UnitQuantity",  
+//"Crate Number", "Current Location", "Current Shipping Sta", "Void L", "Date Scanned", "Block Line Number"  from "Mstr Block WS Detl"
+select distinct "Length", "Block ID" from "DraftingData"
+
+
+where "Project Number" = 'P17-0810'
+
+
+and "BaseStyle" = 'A1'
+//and "Date Scanned" = '00000000'
+
+/*
+and "Void L" = 0
+
+and "Priority" not in (
+
+		'VOID', 
+		'ZEXTRA')
+*/		
+		
+//and "Block ID" like 'A1-%'
+
+order by "Length"

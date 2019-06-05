@@ -1,4 +1,4 @@
-ZEimport uuid
+import uuid
 import rhinoscriptsyntax as rs
 import uuid
 import getpass
@@ -121,7 +121,7 @@ class Zone(Common):
 
 
 def main():
-    path = r"C:\Users\mkreidler\Desktop\test.csv"
+    path = r"C:\Users\mkreidler\Desktop\100 HUDSON ZONES.csv"
     c = Collection()
     z = Zone(c)
     z.label_blocks()
