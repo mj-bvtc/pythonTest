@@ -1,6 +1,6 @@
 import rhinoscriptsyntax as rs
 
-dots = rs.GetObjects("get dots", filter=rs.filter.textdot)
+dots = rs.GetObjects("get dots")
 
 class block:
     def __init__(self):
@@ -12,7 +12,7 @@ blocks = []
 
 for d in dots:
     b = block()
-    x,y,z = rs.TextDotPoint(d)
+    x,y,z = rs.BlockInstanceInsertPoint(d)
     b.y = y
     b.guid = d
     blocks.append(b)
@@ -24,7 +24,7 @@ rs.EnableRedraw(False)
 for i,b in enumerate(blocks):
     i += 1
     b.sort_num = i
-    rs.TextDotText(b.guid, b.sort_num)
+    rs.BlockInstanceName(b.guid, b.sort_num)
     
 
 rs.EnableRedraw(True)
