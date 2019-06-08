@@ -7,7 +7,7 @@ area = raw_input("Type in prefix")
 #rs.EnableRedraw(False)
 
 for i,o in enumerate(obs):
-    #i += 1
+    i += 1
     msg = "{}{}".format(area, i)
     #label = rs.BlockInstanceName(o)
     point = rs.GetPoint()
