@@ -9,7 +9,7 @@ def FindOBJs():
     ## Find folder for Agi Renders ##
     
 
-    agiFolder= r"V:\Projects\Moynihan Station Phase II\Field Work\Agi-Renders"
+    agiFolder= r"Z:\TEST PYTHON"
 
     if not agiFolder: return
     
@@ -28,7 +28,7 @@ def FindOBJs():
 
 def check_for_3dm(folder):
     """
-    Check to if a Rhino .3dm file
+    Check if a Rhino .3dm file
     exists in a folder.
     """
     find=False;
@@ -69,19 +69,19 @@ def AgiImport(dirpath, file):
     
     rs.Command("SplitDisjointMesh ")
     
-    meshes = rs.LastCreatedObjects()
-    max=0
-    keep=None
-    for guid in meshes:
-        mesh = rs.coercemesh(guid)
-        count = mesh.Faces.Count
-        if count > max:
-            keep = guid
-            max = count
+    #meshes = rs.LastCreatedObjects()
+   # max=0
+    #keep=None
+    #for guid in meshes:
+     #   mesh = rs.coercemesh(guid)
+      #  count = mesh.Faces.Count
+       # if count > max:
+        #    keep = guid
+         #   max = count
     
-    if keep:
-        meshes.remove(keep)
-    rs.DeleteObjects(meshes)
+  #  if keep:
+   #     meshes.remove(keep)
+   # rs.DeleteObjects(meshes)
     
     rs.ZoomExtents(all=True)
     

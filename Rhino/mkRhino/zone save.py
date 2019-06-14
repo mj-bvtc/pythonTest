@@ -3,7 +3,11 @@ import rhinoscriptsyntax as rs
 entries = []
 entries.append("name,dot,zone\n")
 
-for i in range(38):
+zones = rs.GetObjects("Sel Closed crvs")
+num = len(zones)
+print num
+
+for i in range(num):
     dot = rs.GetObject("Select Dot", filter = rs.filter.textdot)
     zone = rs.GetObject("Select Zone", filter= rs.filter.curve)
     name = rs.TextDotText(dot)
@@ -14,7 +18,7 @@ for i in range(38):
     entry = "{},{},{}\n".format(name,dot,zone)
     entries.append(entry)
 
-with open(r"V:\Projects\PS 171M_P18-1593\TerraCotta\_Preliminary_Models\_archive\zones.txt", "w+") as f:
+with open(r"C:\Users\mkreidler\Desktop\100 Huson Zone.txt", "w+") as f:
     for e in entries:
         f.write(e)
 
