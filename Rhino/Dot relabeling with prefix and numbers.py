@@ -12,7 +12,8 @@ for i,o in enumerate(obs):
     #label = rs.BlockInstanceName(o)
     point = rs.GetPoint()
     dot = rs.AddTextDot(msg, point)
-    #rs.HideObject(o)
+    rs.HideObject(o)
+    rs.HideObject(dot)
     #rs.ObjectLayer(o,layer="Relabeled")
     
     

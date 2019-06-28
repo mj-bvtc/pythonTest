@@ -9,7 +9,7 @@ def FindOBJs():
     ## Find folder for Agi Renders ##
     
 
-    agiFolder= r"Z:\TEST PYTHON"
+    agiFolder= "F:\100 Hudson"
 
     if not agiFolder: return
     
@@ -21,10 +21,10 @@ def FindOBJs():
             if ext.upper() == "OBJ":
                 if check_for_3dm(dirpath)==False:
                     AgiImport(dirpath,file)
-                    print "Created File: "+dirpath+file
-                    print dirpath + file
+                    print ("Created File:" +dirpath+file)
+                    print (dirpath + file)
                     count+=1
-    print "Created "+str(count)+" Rhino files."
+
 
 def check_for_3dm(folder):
     """
@@ -50,7 +50,7 @@ def AgiImport(dirpath, file):
     """
     objPath=dirpath+'\\'+file
     if os.path.exists(objPath)==False:
-        print objPath
+        print (objPath)
         return
     
     ## Open new template file ##
