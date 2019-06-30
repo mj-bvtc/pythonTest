@@ -1,3 +1,28 @@
+
+//Find all the blocks that are not voided for a job
+
+
+select "Void L", "Priority", "FormingMethod", "UnitQuantity", "Block Line Number", "Current Location", "Block ID"  from "Mstr Block WS Detl"
+where "Project Number" = 'P17-0881'
+and "Void L" != 1
+and "Priority" != 'VOID'
+//and "Block ID" = '2B7'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+************************************
+
 //how TO FIND THE DRAWING NUMBER FOR 35 E WACKER
 
 //select "Project Number", "Priority", "FormingMethod", "UnitQuantity", "Block Line Number", "Current Location", "Block ID"  from "Mstr Block WS Detl"
