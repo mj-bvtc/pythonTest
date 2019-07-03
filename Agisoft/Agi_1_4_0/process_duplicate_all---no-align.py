@@ -21,20 +21,20 @@ def check_save():
         get_save()
 
 
-def align(chunk):
-    chunk.matchPhotos(accuracy=PhotoScan.HighAccuracy,
-                      generic_preselection=True,
-                      reference_preselection=False,
-                      keypoint_limit=55000,
-                      tiepoint_limit=5000
-                      )
-    chunk.alignCameras()
+#def align(chunk):
+ #   chunk.matchPhotos(accuracy=PhotoScan.HighAccuracy,
+  #                    generic_preselection=True,
+   #                   reference_preselection=False,
+    #                  keypoint_limit=55000,
+     #                 tiepoint_limit=5000
+      #                )
+    #chunk.alignCameras()
 
 
-def align_all():
-    for chunk in doc.chunks:
-        align(chunk)
-    doc.save()
+#def align_all():
+ #   for chunk in doc.chunks:
+  #      align(chunk)
+   # doc.save()
 
 
 def duplicate(chunk):
@@ -86,7 +86,7 @@ def process(chunk):
     chunk.buildDenseCloud()
     chunk.buildModel(surface=PhotoScan.Arbitrary,
                      interpolation=PhotoScan.EnabledInterpolation,
-                     face_count=0)
+                     face_count=0, vertex_colors=False)
     #chunk.buildUV(mapping=PhotoScan.GenericMapping)
     #chunk.buildTexture(blending=PhotoScan.MosaicBlending,
                        #size=4096)
