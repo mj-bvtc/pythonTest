@@ -23,6 +23,7 @@ def main():
     rs.Osnap(True)
     
     #initial, rough orientation
+    print "Orient to flat surface"
     start, origin, x, y= DynamicPlane.DynamicPlane()
     end = rg.Plane(rg.Point3d.Origin, rg.Vector3d.XAxis, rg.Vector3d.ZAxis)
     map = rg.Transform.PlaneToPlane(start, end)
@@ -30,7 +31,9 @@ def main():
     max_view("Front")
     
     #secondary fine orientation, scaling etc
-    rs.Osnap(False)    
+    print "Select scale bar and dim direction"
+    rs.Osnap(False)
+    print "scale object"
     start, origin, x, y= DynamicPlane.DynamicPlane()
     map = rg.Transform.PlaneToPlane(start, end)
     factor = 8/origin.DistanceTo(x)
