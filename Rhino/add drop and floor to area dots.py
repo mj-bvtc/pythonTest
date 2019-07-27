@@ -45,7 +45,10 @@ for i,d in enumerate(dots):
             floor = name.replace("FLOOR ", "")
         if "DROP" in name:
             drop = name.replace("DROP ", "")
-    
+    if floor == None:
+        floor = ""
+    if drop == None:
+        drop = ""
     new_text = texts[i] + " (" + drop + "-" + floor + ")"
     #print new_text
     rs.TextDotText(d, text=new_text)

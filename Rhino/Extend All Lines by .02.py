@@ -6,5 +6,5 @@ objs = rs.SelectedObjects()
 
 rs.EnableRedraw(False)
 for o in objs:
-    rs.ExtendCurveLength(o, 0, 2, .2) 
+    rs.ExtendCurveLength(o, 0, 2, 1) 
 rs.EnableRedraw(True)

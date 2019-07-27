@@ -1,3 +1,21 @@
+select distinct "Block ID" from "Mstr Block WS Detl"
+where "Project Number" = 'P19-9999'
+
+
+
+
+
+select * from "Scan Transactions"
+where "Project Number" = 'P18-1325'
+
+
+
+
+
+select * from "ShellLinkData"
+where "Client ID" = 'TN-BB12'
+
+
 
 //Find all the blocks that are not voided for a job
 
