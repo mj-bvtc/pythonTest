@@ -1,0 +1,38 @@
+GraphDraw:
+
+<GraphDraw>:
+
+    #style: style
+    #length: length
+    #height: height
+    #depth: depth
+
+    GridLayout:
+
+        cols:1
+        size: root.width, root.height
+        GridLayout:
+            cols:2
+            Label:
+                text: "Style: "
+            TextInput:
+                #id: style
+                multiline: False
+            Label:
+                text: "Length: "
+            TextInput:
+                #id: length
+                multiline: False
+            Label:
+                text: "Height: "
+            TextInput:
+                #id: height
+                multiline: False
+            Label:
+                text: "Depth: "
+            TextInput:
+                #id: depth
+                multiline: False
+        Button:
+            text: "Open DataFrame"
+            on_press: root.graph()
