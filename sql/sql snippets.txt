@@ -1,3 +1,23 @@
+select 
+
+	"Block ID", 
+	"SampleName", 
+	"DrawingNumber", 
+	"BaseStyle", 
+	"UnitQuantity", 
+	"GlazeColor", 
+	"DescStyle", 
+	"FormingMethod", 
+	"Length", 
+	"Height", 
+	"Depth", 
+	"Volume", 
+	"Weight" 
+
+from "DraftingData"
+where "Project Number" = 'P14-0436'
+
+
 select distinct "Block ID" from "Mstr Block WS Detl"
 where "Project Number" = 'P19-9999'
 
