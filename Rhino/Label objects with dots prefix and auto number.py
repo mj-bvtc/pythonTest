@@ -10,3 +10,4 @@ for i,o in enumerate(obs):
     msg = "{}{}".format(prefix,i)
     pt = rs.GetPoint("Pick point")
     rs.AddTextDot(msg, pt)
+    
