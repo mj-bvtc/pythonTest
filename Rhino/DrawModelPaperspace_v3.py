@@ -1,7 +1,6 @@
 import rhinoscriptsyntax as rs
 import Rhino
-import uuid
-from DetailCenter import DetailCenter
+
 
 class PaperDrawing:
     """A projection of drawing to modelspace"""

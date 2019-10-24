@@ -1,3 +1,11 @@
+
+select "Priority", "Block ID", "FormingMethod", "Block Line Number", "Void L", "Current Location" from "Mstr Block WS Detl"
+where "Project Number"  = 'P18-1325'
+
+------------------------
+
+
+
 select 
 	master."Block ID", 
 	master."GlazeColor", 
