@@ -1,4 +1,40 @@
 
+
+
+
+***FCCH***
+
+select 
+
+	
+	"USER",
+	"Block ID", 
+	"SampleName", 
+	"DrawingNumber", 
+	"BaseStyle", 
+	"UnitQuantity", 
+	"GlazeColor", 
+	"DescStyle", 
+	"FormingMethod", 
+	"Length", 
+	"Height", 
+	"Depth", 
+	"Volume", 
+	"Weight" 
+
+from "DraftingData"
+where "Project Number" = 'P17-0896'
+
+Order by "User", "Block ID"
+
+
+
+
+
+
+
+
+
 select "Priority", "Block ID", "FormingMethod", "Block Line Number", "Void L", "Current Location" from "Mstr Block WS Detl"
 where "Project Number"  = 'P18-1325'
 

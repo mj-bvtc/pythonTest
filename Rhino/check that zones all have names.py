@@ -10,6 +10,6 @@ for zone in zones:
         print "bad"
         pass
     else:
-        #print "good"
+        print "good"
         pass
 print "done"
